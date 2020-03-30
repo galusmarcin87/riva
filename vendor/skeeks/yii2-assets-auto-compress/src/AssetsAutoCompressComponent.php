@@ -377,7 +377,7 @@ JS
         }
 
         if ($resultContent) {
-            $content = implode($resultContent, ";\n");
+            $content = implode(";\n", $resultContent);
             if (!is_dir($rootDir)) {
                 if (!FileHelper::createDirectory($rootDir, 0777)) {
                     return $files;
@@ -434,7 +434,10 @@ JS
         if (!$file) {
             throw new \Exception("Unable to open file: '{$filePath}'");
         }
-        return fread($file, filesize($filePath));
+        $filesSize = filesize($filePath);
+        if($filesSize){
+            return fread($file, $filesSize);
+        }
         fclose($file);
     }
     /**
@@ -554,7 +557,7 @@ JS
         }
 
         if ($resultContent) {
-            $content = implode($resultContent, "\n");
+            $content = implode("\n", $resultContent);
             if (!is_dir($rootDir)) {
                 if (!FileHelper::createDirectory($rootDir, 0777)) {
                     return $files;

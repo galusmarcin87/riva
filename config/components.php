@@ -37,6 +37,9 @@ $arr = [
         'appendTimestamp' => false,
         'forceCopy' => YII_DEBUG ? true : false,
         'converter' => [
+            'commands' => [
+                'scss' => ['css', 'sass {from} {to}']
+            ],
             'class' => 'nizsheanez\assetConverter\Converter',
             'parsers' => [
                 'less' => [// file extension to parse

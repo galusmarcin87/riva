@@ -668,6 +668,10 @@ return array(
     'aCssToken' => $vendorDir . '/natxet/cssmin/src/CssMin.php',
     'fpdi_pdf_parser' => $vendorDir . '/setasign/fpdi/fpdi_pdf_parser.php',
     'lessc' => $vendorDir . '/oyejorge/less.php/lessc.inc.php',
+    'lessc_formatter_classic' => $vendorDir . '/marcusschwarz/lesserphp/lessc.inc.php',
+    'lessc_formatter_compressed' => $vendorDir . '/marcusschwarz/lesserphp/lessc.inc.php',
+    'lessc_formatter_lessjs' => $vendorDir . '/marcusschwarz/lesserphp/lessc.inc.php',
+    'lessc_parser' => $vendorDir . '/marcusschwarz/lesserphp/lessc.inc.php',
     'pdf_context' => $vendorDir . '/setasign/fpdi/pdf_context.php',
     'scss_compass' => $vendorDir . '/yourilima/scssphp-compass/compass.inc.php',
 );

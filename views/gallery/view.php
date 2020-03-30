@@ -1,6 +1,6 @@
 <?php
 /* @var $model app\models\mgcms\db\Gallery */
-use branchonline\lightbox\Lightbox;
+use mgcms\lightbox\Lightbox;
 use \app\models\mgcms\db\FileRelation;
 
 Lightbox::widget();

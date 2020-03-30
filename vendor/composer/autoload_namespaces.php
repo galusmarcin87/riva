@@ -7,7 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'nizsheanez\\assetConverter\\' => array($vendorDir . '/nizsheanez/yii2-asset-converter'),
-    'Props\\' => array($vendorDir . '/mrclay/props-dic/src', $vendorDir . '/mrclay/props-dic/test'),
+    'Props\\' => array($vendorDir . '/mrclay/props-dic/src'),
     'Pimple' => array($vendorDir . '/pimple/pimple/src'),
     'Less' => array($vendorDir . '/oyejorge/less.php/lib'),
     'JShrink' => array($vendorDir . '/tedivm/jshrink/src'),

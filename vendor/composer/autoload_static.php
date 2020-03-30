@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit074b100865d00138043ae946f12e54a1
+class ComposerStaticInite75127aa9cb36c4caa7c6aa06916e95c
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -118,6 +118,7 @@ class ComposerStaticInit074b100865d00138043ae946f12e54a1
             'mootensai\\enhancedgii\\' => 22,
             'mootensai\\components\\' => 21,
             'mootensai\\behaviors\\' => 20,
+            'mgcms\\yii2-lightbox\\' => 20,
             'mgcms\\tokenfield\\' => 17,
         ),
         'k' => 
@@ -159,6 +160,7 @@ class ComposerStaticInit074b100865d00138043ae946f12e54a1
             'kartik\\date\\' => 12,
             'kartik\\color\\' => 13,
             'kartik\\builder\\' => 15,
+            'kartik\\bs4dropdown\\' => 19,
             'kartik\\base\\' => 12,
             'kartik\\alert\\' => 13,
             'kartik\\affix\\' => 13,
@@ -174,10 +176,6 @@ class ComposerStaticInit074b100865d00138043ae946f12e54a1
         'c' => 
         array (
             'cebe\\markdown\\' => 14,
-        ),
-        'b' => 
-        array (
-            'branchonline\\lightbox\\' => 22,
         ),
         '_' => 
         array (
@@ -224,7 +222,6 @@ class ComposerStaticInit074b100865d00138043ae946f12e54a1
         'I' => 
         array (
             'Intervention\\Httpauth\\' => 22,
-            'Interop\\Container\\' => 18,
         ),
         'G' => 
         array (
@@ -331,6 +328,10 @@ class ComposerStaticInit074b100865d00138043ae946f12e54a1
         'mootensai\\behaviors\\' => 
         array (
             0 => __DIR__ . '/..' . '/mootensai/yii2-uuid-behavior',
+        ),
+        'mgcms\\yii2-lightbox\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/extensions/mgcms/yii2-lightbox-master',
         ),
         'mgcms\\tokenfield\\' => 
         array (
@@ -484,6 +485,10 @@ class ComposerStaticInit074b100865d00138043ae946f12e54a1
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-builder/src',
         ),
+        'kartik\\bs4dropdown\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-bootstrap4-dropdown/src',
+        ),
         'kartik\\base\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base/src',
@@ -507,10 +512,6 @@ class ComposerStaticInit074b100865d00138043ae946f12e54a1
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
-        ),
-        'branchonline\\lightbox\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/branchonline/yii2-lightbox/src',
         ),
         '__\\' => 
         array (
@@ -612,10 +613,6 @@ class ComposerStaticInit074b100865d00138043ae946f12e54a1
         array (
             0 => __DIR__ . '/..' . '/intervention/httpauth/src/Intervention/Httpauth',
         ),
-        'Interop\\Container\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
-        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -664,7 +661,6 @@ class ComposerStaticInit074b100865d00138043ae946f12e54a1
             'Props\\' => 
             array (
                 0 => __DIR__ . '/..' . '/mrclay/props-dic/src',
-                1 => __DIR__ . '/..' . '/mrclay/props-dic/test',
             ),
             'Pimple' => 
             array (
@@ -1389,6 +1385,10 @@ class ComposerStaticInit074b100865d00138043ae946f12e54a1
         'aCssToken' => __DIR__ . '/..' . '/natxet/cssmin/src/CssMin.php',
         'fpdi_pdf_parser' => __DIR__ . '/..' . '/setasign/fpdi/fpdi_pdf_parser.php',
         'lessc' => __DIR__ . '/..' . '/oyejorge/less.php/lessc.inc.php',
+        'lessc_formatter_classic' => __DIR__ . '/..' . '/marcusschwarz/lesserphp/lessc.inc.php',
+        'lessc_formatter_compressed' => __DIR__ . '/..' . '/marcusschwarz/lesserphp/lessc.inc.php',
+        'lessc_formatter_lessjs' => __DIR__ . '/..' . '/marcusschwarz/lesserphp/lessc.inc.php',
+        'lessc_parser' => __DIR__ . '/..' . '/marcusschwarz/lesserphp/lessc.inc.php',
         'pdf_context' => __DIR__ . '/..' . '/setasign/fpdi/pdf_context.php',
         'scss_compass' => __DIR__ . '/..' . '/yourilima/scssphp-compass/compass.inc.php',
     );
@@ -1396,10 +1396,10 @@ class ComposerStaticInit074b100865d00138043ae946f12e54a1
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit074b100865d00138043ae946f12e54a1::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit074b100865d00138043ae946f12e54a1::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit074b100865d00138043ae946f12e54a1::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit074b100865d00138043ae946f12e54a1::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInite75127aa9cb36c4caa7c6aa06916e95c::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInite75127aa9cb36c4caa7c6aa06916e95c::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInite75127aa9cb36c4caa7c6aa06916e95c::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInite75127aa9cb36c4caa7c6aa06916e95c::$classMap;
 
         }, null, ClassLoader::class);
     }

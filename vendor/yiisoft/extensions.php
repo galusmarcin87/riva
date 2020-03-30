@@ -21,22 +21,13 @@ return array (
       '@yii/bootstrap' => $vendorDir . '/yiisoft/yii2-bootstrap/src',
     ),
   ),
-  'yiisoft/yii2-jui' => 
+  'kartik-v/yii2-datecontrol' => 
   array (
-    'name' => 'yiisoft/yii2-jui',
-    'version' => '2.0.7.0',
-    'alias' => 
-    array (
-      '@yii/jui' => $vendorDir . '/yiisoft/yii2-jui',
-    ),
-  ),
-  'kartik-v/yii2-icons' => 
-  array (
-    'name' => 'kartik-v/yii2-icons',
+    'name' => 'kartik-v/yii2-datecontrol',
     'version' => '9999999-dev',
     'alias' => 
     array (
-      '@kartik/icons' => $vendorDir . '/kartik-v/yii2-icons/src',
+      '@kartik/datecontrol' => $vendorDir . '/kartik-v/yii2-datecontrol/src',
     ),
   ),
   '2amigos/yii2-ckeditor-widget' => 
@@ -60,7 +51,7 @@ return array (
   'yiisoft/yii2-httpclient' => 
   array (
     'name' => 'yiisoft/yii2-httpclient',
-    'version' => '2.0.11.0',
+    'version' => '2.0.12.0',
     'alias' => 
     array (
       '@yii/httpclient' => $vendorDir . '/yiisoft/yii2-httpclient/src',
@@ -69,7 +60,7 @@ return array (
   'skeeks/yii2-assets-auto-compress' => 
   array (
     'name' => 'skeeks/yii2-assets-auto-compress',
-    'version' => '1.4.2.0',
+    'version' => '1.4.2.1',
     'alias' => 
     array (
       '@skeeks/yii2/assetsAuto' => $vendorDir . '/skeeks/yii2-assets-auto-compress/src',
@@ -83,6 +74,16 @@ return array (
     array (
       '@nizsheanez/assetConverter' => $vendorDir . '/nizsheanez/yii2-asset-converter/nizsheanez/assetConverter',
     ),
+  ),
+  'vintage/yii2-i18n' => 
+  array (
+    'name' => 'vintage/yii2-i18n',
+    'version' => '1.3.0.0',
+    'alias' => 
+    array (
+      '@vintage/i18n' => $vendorDir . '/vintage/yii2-i18n/src',
+    ),
+    'bootstrap' => 'vintage\\i18n\\Bootstrap',
   ),
   'kartik-v/yii2-tabs-x' => 
   array (
@@ -150,7 +151,7 @@ return array (
   'kartik-v/yii2-widget-select2' => 
   array (
     'name' => 'kartik-v/yii2-widget-select2',
-    'version' => '2.1.3.0',
+    'version' => '2.1.7.0',
     'alias' => 
     array (
       '@kartik/select2' => $vendorDir . '/kartik-v/yii2-widget-select2/src',
@@ -291,6 +292,15 @@ return array (
       '@kartik/sortable' => $vendorDir . '/kartik-v/yii2-sortable/src',
     ),
   ),
+  'kartik-v/yii2-bootstrap4-dropdown' => 
+  array (
+    'name' => 'kartik-v/yii2-bootstrap4-dropdown',
+    'version' => '1.0.1.0',
+    'alias' => 
+    array (
+      '@kartik/bs4dropdown' => $vendorDir . '/kartik-v/yii2-bootstrap4-dropdown/src',
+    ),
+  ),
   'kartik-v/yii2-dialog' => 
   array (
     'name' => 'kartik-v/yii2-dialog',
@@ -303,7 +313,7 @@ return array (
   'kartik-v/yii2-grid' => 
   array (
     'name' => 'kartik-v/yii2-grid',
-    'version' => '3.3.2.0',
+    'version' => '3.3.5.0',
     'alias' => 
     array (
       '@kartik/grid' => $vendorDir . '/kartik-v/yii2-grid/src',
@@ -391,15 +401,6 @@ return array (
     ),
     'bootstrap' => 'mootensai\\enhancedgii\\Bootstrap',
   ),
-  'kartik-v/yii2-datecontrol' => 
-  array (
-    'name' => 'kartik-v/yii2-datecontrol',
-    'version' => '9999999-dev',
-    'alias' => 
-    array (
-      '@kartik/datecontrol' => $vendorDir . '/kartik-v/yii2-datecontrol/src',
-    ),
-  ),
   'yiisoft/yii2-imagine' => 
   array (
     'name' => 'yiisoft/yii2-imagine',
@@ -419,13 +420,22 @@ return array (
     ),
     'bootstrap' => 'rmrevin\\yii\\module\\File\\Bootstrap',
   ),
-  'branchonline/yii2-lightbox' => 
+  'yiisoft/yii2-jui' => 
   array (
-    'name' => 'branchonline/yii2-lightbox',
-    'version' => '1.2.0.0',
+    'name' => 'yiisoft/yii2-jui',
+    'version' => '2.0.7.0',
     'alias' => 
     array (
-      '@branchonline/lightbox' => $vendorDir . '/branchonline/yii2-lightbox/src',
+      '@yii/jui' => $vendorDir . '/yiisoft/yii2-jui',
+    ),
+  ),
+  'kartik-v/yii2-icons' => 
+  array (
+    'name' => 'kartik-v/yii2-icons',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/icons' => $vendorDir . '/kartik-v/yii2-icons/src',
     ),
   ),
   'geertw/yii2-translatable-url-rule' => 
@@ -472,15 +482,5 @@ return array (
     array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
     ),
-  ),
-  'vintage/yii2-i18n' => 
-  array (
-    'name' => 'vintage/yii2-i18n',
-    'version' => '1.3.0.0',
-    'alias' => 
-    array (
-      '@vintage/i18n' => $vendorDir . '/vintage/yii2-i18n/src',
-    ),
-    'bootstrap' => 'vintage\\i18n\\Bootstrap',
   ),
 );
