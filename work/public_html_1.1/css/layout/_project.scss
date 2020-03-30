@@ -1,0 +1,226 @@
+.Project {
+  --grid: 50% 50%;
+  --gap: 20px;
+  background: $COLOR-4;
+  padding: 25px 0;
+
+  &__map {
+    width: 100%;
+
+    @media (max-width: $MD) {
+     height: 300px;
+    }
+  }
+
+  &__photo {
+    object-fit: cover;
+    height: 560px;
+
+    @media (max-width: $LG) {
+      height: 100%;
+    }
+
+    @media (max-width: $MD) {
+      height: auto;
+     }
+
+  }
+
+  &__slider {
+    position: relative;
+    padding-top: 15px;
+
+    @media (max-width: $LG) {
+      display: none;
+    }
+
+    .owl-carousel {
+      transform: rotate(90deg) translate(25%, 50%);
+      height: 265px;
+      width: 550px;
+
+      @include owlArrows(
+        $background: $PRIMARY,
+        $color: $COLOR-1,
+        $borderColor: $PRIMARY_DARKEN
+      );
+
+      .owl-nav {
+        top: 50%;
+        .owl-prev {
+          left: -10px !important;
+        }
+        .owl-next {
+          left: 510px !important;
+        }
+      }
+    }
+
+    .item {
+      transform: rotate(-90deg);
+      height: 265px;
+      width: 265px !important;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+    .owl-nav {
+      position: absolute;
+    }
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: var(--grid);
+
+    @media (max-width: $LG) {
+      display: block;
+    }
+
+    @media (max-width: $MD) {
+      padding: 0 !important;
+    }
+
+    &__content {
+      background: $COLOR-3;
+      padding: 20px;
+
+      .Invest-counter {
+        &__header {
+          align-items: center;
+        }
+
+        &__body {
+          margin-top: 0 !important;
+
+          .Count-down-timer > div {
+            border-color: $COLOR_14;
+            font-size: 13px;
+          }
+        }
+
+        &__target {
+          font-size: 18px;
+        }
+      }
+
+      .btn {
+        margin-top: 20px !important;
+      }
+    }
+
+    .List-custom__two {
+      margin-bottom: 0;
+
+      &__item {
+        grid-template-columns: var(--grid);
+        grid-column-gap: 5px;
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: var(--grid);
+
+    &:first-child {
+      margin-top: 25px;
+    }
+
+    &:last-child {
+      margin-bottom: 25px;
+    }
+
+    > div {
+      @media (max-width: $TABLET) {
+        padding: 30px 15px;
+        font-size: 0.8em;
+      }
+
+      @media (max-width: $MD) {
+      }
+    }
+
+    @media (max-width: $MD) {
+      display: block;
+    }
+
+    .btn {
+      margin-top: 30px;
+
+      &:first-child {
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__location {
+    width: 100%;
+
+    @media (max-width: $MD) {
+      height: 300px;
+    }
+  }
+
+  &__text {
+    font-size: 1em;
+    color: $COLOR-8;
+    font-weight: 300;
+  }
+
+  &__action {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 15px;
+    margin-bottom: 30px;
+
+    .btn {
+      margin: 0 !important;
+    }
+  }
+
+  .White-text-block {
+    display: grid;
+    grid-template-columns: 3fr 3.5fr 3.5fr;
+    grid-column-gap: 10px;
+    margin-top: 35px;
+
+    @media (max-width: $TABLET) {
+      grid-template-columns: 1fr 1fr;
+
+      > div {
+        order: 0;
+
+        &:first-child {
+          order: 1;
+        }
+
+      }
+    }
+
+    @media (max-width: $MD) {
+      grid-template-columns: 1fr
+    }
+  }
+
+  .Invest-counter__body {
+    border-bottom: none;
+    margin: 15px 0;
+    grid-template-columns: auto auto auto;
+    max-width: 320px;
+  }
+
+  .Count-down-timer {
+    > div {
+      font-size: 0.6em;
+
+      span {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .btn--medium {
+    margin-top: 20px;
+  }
+}

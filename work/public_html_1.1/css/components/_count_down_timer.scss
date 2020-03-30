@@ -1,0 +1,24 @@
+.Count-down-timer {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+
+  > div {
+    font-size: 0.8em;
+    color: $PRIMARY;
+    text-align: center;
+    font-weight: 500;
+    border-right: 1px solid $COLOR_4;
+
+    &:first-child {
+      border-left: 1px solid $COLOR_4;
+    }
+
+    span {
+      font-size: 2em;
+      color: $PRIMARY;
+      font-weight: BOLD;
+      display: block;
+      line-height: 1;
+    }
+  }
+}

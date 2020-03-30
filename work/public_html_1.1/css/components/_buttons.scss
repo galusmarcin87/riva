@@ -1,0 +1,84 @@
+.btn {
+  border: none;
+  border-radius: $RADIUS;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 9px 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &--lowercase {
+    text-transform: initial;
+  }
+
+  &--medium {
+    min-width: 280px;;
+  }
+
+  &--line-top {
+    border-top: 1px solid $SECONDARY_DARKEN_2 !important; 
+    border-bottom: 1px solid $SECONDARY !important;
+  }
+}
+
+.btn-fb {
+  background: $FB;
+  color: $COLOR-3;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $COLOR-3;
+    opacity: 0.9;
+  }
+}
+
+.btn-primary {
+  background: $PRIMARY;
+  border-radius: $RADIUS;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: $PRIMARY_HOVER !important;
+  }
+}
+
+.btn-success {
+  background: $SECONDARY;
+  border: 1px solid $SECONDARY;
+  text-shadow: $TEXT_SHADOW;
+  box-shadow: 0 5px 12px 0px #0000000d;
+  border-bottom: 2px solid $SECONDARY_DARKEN_2;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: $SECONDARY !important;
+    opacity: 0.9;
+    border-color: $SECONDARY;
+  }
+
+  &--outline {
+    text-transform: none;
+    background: transparent;
+    border-bottom: 1px solid $SECONDARY;
+  }
+
+  &--reverse-colors {
+      color: $SECONDARY;
+      box-shadow: none;
+      border-bottom: 1px solid $SECONDARY;
+  }
+
+  &--line-bottom {
+    border-bottom: 2px solid $SECONDARY_DARKEN_2;
+  }
+
+
+}
+
+.btn-big {
+  padding: 25px 55px;
+}
+

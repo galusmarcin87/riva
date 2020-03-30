@@ -1,0 +1,31 @@
+.Partners {
+  background-color: $COLOR_3 !important;
+  + {
+    Section {
+      background-color: $COLOR_3 !important;
+      padding-top: 0px !important;
+    }
+  }
+  &__carousel {
+    margin: 25px 0;
+
+    @include owlArrows($background: $COLOR_9, $color: $PRIMARY, $offset: -20px);
+
+    @media (max-width: $TABLET) {
+    @include owlArrows($background: $COLOR_9, $color: $PRIMARY, $offset: 0);
+      
+    }
+  }
+
+  &__item {
+    padding: 35px 50px;
+    border-bottom: 1px solid $COLOR_8;
+    &__link {
+      &__logo {
+        width: 100%;
+        height: auto;
+        fill: $COLOR_11;
+      }
+    }
+  }
+}
