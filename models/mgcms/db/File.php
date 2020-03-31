@@ -2,7 +2,8 @@
 namespace app\models\mgcms\db;
 
 use \app\models\mgcms\db\base\File as BaseFile;
-use branchonline\lightbox\Lightbox;
+
+use \mgcms\lightbox\Lightbox;
 use \yii\helpers\Html;
 
 \rmrevin\yii\module\File\component\Image::$thumbnailBackgroundAlpha = 0;

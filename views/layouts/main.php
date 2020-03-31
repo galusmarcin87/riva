@@ -32,7 +32,7 @@ FrontAsset::register($this);
         <?php $this->head() ?>
 
     </head>
-    <body id="page_<?= Yii::$app->controller->id . '_' . Yii::$app->controller->action->id ?>" class="royal_preloader">
+    <body id="page_<?= Yii::$app->controller->id . '_' . Yii::$app->controller->action->id ?>">
         <?php $this->beginBody() ?>
         <?= $this->render('header') ?>
         <?= Alert::widget() ?>

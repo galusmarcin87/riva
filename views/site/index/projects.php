@@ -81,7 +81,7 @@ foreach ($tabsStatuses as $status) {
            class="btn btn-success btn-block"><?= Yii::t('db', 'SEE ALL'); ?></a>
     </div>
     <script>
-      $(document).ready(function () {
+      window.addEventListener('DOMContentLoaded', (event) => {
           $('.Projects__filter .btn').click(function () {
               $('.Projects__filter .btn').removeClass('btn-primary');
               $('.Projects__filter .btn').addClass('btn-success');

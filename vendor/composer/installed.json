@@ -125,7 +125,7 @@
         "version_normalized": "3.4.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/twbs/bootstrap.git",
+            "url": "git@github.com:twbs/bootstrap.git",
             "reference": "68b0d231a13201eb14acd3dc84e51543d16e5f7e"
         },
         "dist": {
@@ -171,7 +171,7 @@
         "version_normalized": "3.4.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/jquery/jquery-dist.git",
+            "url": "git@github.com:jquery/jquery-dist.git",
             "reference": "15bc73803f76bc53b654b9fdbbbc096f56d7c03d"
         },
         "dist": {
@@ -201,6 +201,29 @@
         },
         "require": {
             "bower-asset/jquery": ">=1.6"
+        },
+        "type": "bower-asset",
+        "installation-source": "dist",
+        "license": [
+            "MIT"
+        ]
+    },
+    {
+        "name": "bower-asset/lightbox2",
+        "version": "v2.11.1",
+        "version_normalized": "2.11.1.0",
+        "source": {
+            "type": "git",
+            "url": "git@github.com:lokesh/lightbox2.git",
+            "reference": "a01e1f36f53ec5f6eab573ff08ca89a119641558"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/lokesh/lightbox2/zipball/a01e1f36f53ec5f6eab573ff08ca89a119641558",
+            "reference": "a01e1f36f53ec5f6eab573ff08ca89a119641558"
+        },
+        "require": {
+            "bower-asset/jquery": ">2"
         },
         "type": "bower-asset",
         "installation-source": "dist",

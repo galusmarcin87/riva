@@ -84,18 +84,3 @@ $menu = new NobleMenu(['name' => 'footer_' . Yii::$app->language, 'loginLink' =>
         </div>
     </div>
 </footer>
-
-
-<script type="text/javascript">
-
-    $(document).ready(function () {
-        Royal_Preloader.config({
-            mode: 'text',
-            text: 'Real Estate Crowdsale…',
-            timeout: 10,
-            background: '#000000',
-            cookie: 'placeholder'
-        });
-    });
-
-</script>

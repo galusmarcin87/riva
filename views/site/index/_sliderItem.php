@@ -15,6 +15,48 @@ $model->language = Yii::$app->language;
 <div class="item">
     <div
             class="Slider__item"
+            style="background-image: url('<?= $model->file->getImageSrc(1920, 760) ?>')"
+    >
+        <div class="container">
+            <div class="Slider__description">
+                <div class="Slider__description__header">
+                    <?= $model->name ?>
+                </div>
+                <div class="Slider__description__content">
+                    <?= $model->lead ?>
+                </div>
+                <ul class="Slider__description__list">
+                    <li class="Slider__description__list__item">
+                    <span>
+                      Kurs Tokena:
+                    </span>
+                        <span>
+                      3,45 $
+                    </span>
+                    </li>
+                    <li class="Slider__description__list__item">
+                    <span>
+                      Ilość tokenów:
+                    </span>
+                        <span>
+                      1 786 901
+                    </span>
+                    </li>
+                </ul>
+                <div class="Slider__description__buttons">
+                    <a class="btn btn-success btn-success--outline" href="<?= $model->linkUrl ?>"
+                    ><?= Yii::t('db', 'Check projects'); ?></a>
+                    <a class="btn btn-success"
+                       href="<?= \yii\helpers\Url::to(['project/buy', 'id' => $model->id]) ?>"><?= Yii::t('db', 'Buy tokens'); ?></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="item">
+    <div
+            class="Slider__item"
             style="background-image: url(<?= $model->file->getImageSrc(1920, 760) ?>)"
     >
         <div class="container">
@@ -72,7 +114,8 @@ $model->language = Yii::$app->language;
                                     <span></span> <?= Yii::t('db', 'seconds'); ?>
                                 </div>
                             </div>
-                            <a href="<?= \yii\helpers\Url::to(['project/buy', 'id' => $model->id]) ?>" class="btn btn-success"><?= Yii::t('db','Invest'); ?></a>
+                            <a href="<?= \yii\helpers\Url::to(['project/buy', 'id' => $model->id]) ?>"
+                               class="btn btn-success"><?= Yii::t('db', 'Invest'); ?></a>
                         </div>
                     </div>
                 </div>

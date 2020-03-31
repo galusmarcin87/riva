@@ -118,8 +118,8 @@ class ComposerStaticInite75127aa9cb36c4caa7c6aa06916e95c
             'mootensai\\enhancedgii\\' => 22,
             'mootensai\\components\\' => 21,
             'mootensai\\behaviors\\' => 20,
-            'mgcms\\yii2-lightbox\\' => 20,
             'mgcms\\tokenfield\\' => 17,
+            'mgcms\\lightbox\\' => 15,
         ),
         'k' => 
         array (
@@ -329,13 +329,13 @@ class ComposerStaticInite75127aa9cb36c4caa7c6aa06916e95c
         array (
             0 => __DIR__ . '/..' . '/mootensai/yii2-uuid-behavior',
         ),
-        'mgcms\\yii2-lightbox\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/extensions/mgcms/yii2-lightbox-master',
-        ),
         'mgcms\\tokenfield\\' => 
         array (
             0 => __DIR__ . '/../..' . '/extensions/mgcms/yii2-bootstrap-tokenfield',
+        ),
+        'mgcms\\lightbox\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/extensions/mgcms/yii2-lightbox',
         ),
         'kartik\\widgets\\' => 
         array (

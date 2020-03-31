@@ -27,8 +27,9 @@
     "geertw/yii2-translatable-url-rule": "*",
     "kartik-v/yii2-password": "@dev",
     "tajawal/lodash-php": "*",
-    "rvkulikov/yii2-getresponse": "*"
-  },
+    "rvkulikov/yii2-getresponse": "*",
+    "bower-asset/lightbox2": "*"
+},
   "require-dev": {
     "yiisoft/yii2-debug": "~2.0.0",
     "yiisoft/yii2-gii": "~2.0.0",
@@ -74,12 +75,16 @@
     {
         "type": "path",
         "url": "extensions/mgcms/yii2-bootstrap-tokenfield"
+    },
+    {
+      "type": "path",
+      "url": "extensions/mgcms/yii2-lightbox-master"
     }
   ],
   "autoload": {
     "psr-4": {
       "mgcms\\tokenfield\\": "extensions/mgcms/yii2-bootstrap-tokenfield",
-      "mgcms\\yii2-lightbox\\": "extensions/mgcms/yii2-lightbox-master"
+      "mgcms\\lightbox\\": "extensions/mgcms/yii2-lightbox"
     }
   }
 }

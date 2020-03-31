@@ -6,10 +6,10 @@ use yii\web\AssetBundle;
 
 class LightboxAsset extends AssetBundle {
 
-    public $sourcePath = '@bower/lightbox2';
+    public $sourcePath = '@bower/lightbox2/src';
 
     public $js = [
-        'js/lightbox.min.js',
+        'js/lightbox.js',
     ];
 
     public $css = [

@@ -1,5 +1,318 @@
+const accordionInit = (
+    $header = $("#heading-1"),
+    $accordion = $("#accordion_custom")
+) => {
+  const body = $header
+      .next(".collapse")
+      .removeClass("collapsed")
+      .find("> div")
+      .html();
+  $header.removeClass("collapsed");
+
+  $accordion.find(".Accordion__text").html(body);
+  $accordion
+      .find(".Accordion__card__header")
+      .not($header)
+      .addClass("collapsed");
+};
+
+const mapStyles = [
+  {
+    featureType: "water",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#e9e9e9"
+      },
+      {
+        lightness: 17
+      }
+    ]
+  },
+  {
+    featureType: "landscape",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#f5f5f5"
+      },
+      {
+        lightness: 20
+      }
+    ]
+  },
+  {
+    featureType: "road.highway",
+    elementType: "geometry.fill",
+    stylers: [
+      {
+        color: "#ffffff"
+      },
+      {
+        lightness: 17
+      }
+    ]
+  },
+  {
+    featureType: "road.highway",
+    elementType: "geometry.stroke",
+    stylers: [
+      {
+        color: "#ffffff"
+      },
+      {
+        lightness: 29
+      },
+      {
+        weight: 0.2
+      }
+    ]
+  },
+  {
+    featureType: "road.arterial",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#ffffff"
+      },
+      {
+        lightness: 18
+      }
+    ]
+  },
+  {
+    featureType: "road.local",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#ffffff"
+      },
+      {
+        lightness: 16
+      }
+    ]
+  },
+  {
+    featureType: "poi",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#f5f5f5"
+      },
+      {
+        lightness: 21
+      }
+    ]
+  },
+  {
+    featureType: "poi.park",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#dedede"
+      },
+      {
+        lightness: 21
+      }
+    ]
+  },
+  {
+    elementType: "labels.text.stroke",
+    stylers: [
+      {
+        visibility: "on"
+      },
+      {
+        color: "#ffffff"
+      },
+      {
+        lightness: 16
+      }
+    ]
+  },
+  {
+    elementType: "labels.text.fill",
+    stylers: [
+      {
+        saturation: 36
+      },
+      {
+        color: "#333333"
+      },
+      {
+        lightness: 40
+      }
+    ]
+  },
+  {
+    elementType: "labels.icon",
+    stylers: [
+      {
+        visibility: "off"
+      }
+    ]
+  },
+  {
+    featureType: "transit",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#f2f2f2"
+      },
+      {
+        lightness: 19
+      }
+    ]
+  },
+  {
+    featureType: "administrative",
+    elementType: "geometry.fill",
+    stylers: [
+      {
+        color: "#fefefe"
+      },
+      {
+        lightness: 20
+      }
+    ]
+  },
+  {
+    featureType: "administrative",
+    elementType: "geometry.stroke",
+    stylers: [
+      {
+        color: "#fefefe"
+      },
+      {
+        lightness: 17
+      },
+      {
+        weight: 1.2
+      }
+    ]
+  }
+];
+
+const initMap = () => {
+  const generateInfowindow = ({
+                                name,
+                                locatioin,
+                                offering,
+                                investition,
+                                inProgress,
+                                link
+                              }) => {
+    const html = /*html*/ `
+    <div class="Map__info-window">
+      <div class="Map__info">
+        <div class="Map__info__icon Map__info__icon--${
+        inProgress ? "active" : "inactive"
+    }"></div>
+        <div class="Map__info__description">${name}</div>
+      </div>
+      <ul class="List-custom__two">
+        <li class="List-custom__two__item">
+          <span>Lokalizacja</span>
+          <span><strong>${locatioin}</strong></span>
+        </li>
+        <li class="List-custom__two__item">
+          <span>Inwestycja</span>
+          <span><strong>${investition}</strong></span>
+        </li>
+        <li class="List-custom__two__item">
+          <span>Oferowane</span>
+          <span><strong>${offering}</strong></span>
+        </li>
+      </ul>
+      <a href="${link}" class="btn btn-success btn-block">Szczegóły inwestycji</a>
+    </div>`;
+    return html;
+  };
+  const locations = [
+    {
+      inProgress: false,
+      name: "Budowa apartamentowca",
+      locatioin: "Wasrszawa, Polska",
+      investition: "3 lata",
+      offering: "15%",
+      more: "Szczegóły inwestycji",
+      latitude: "52.31784",
+      longitude: "21.68781",
+      link: "#"
+    },
+    {
+      inProgress: true,
+      name: "Budowa apartamentowca",
+      locatioin: "Wasrszawa, Polska",
+      investition: "3 lata",
+      offering: "15%",
+      more: "Szczegóły inwestycji",
+      latitude: "52.31786",
+      longitude: "21.97789",
+      link: "#"
+    },
+    {
+      inProgress: false,
+      name: "Budowa apartamentowca",
+      locatioin: "Wasrszawa, Polska",
+      investition: "3 lata",
+      offering: "15%",
+      more: "Szczegóły inwestycji",
+      latitude: "52.21784",
+      longitude: "21.28781",
+      link: "#"
+    },
+    {
+      inProgress: true,
+      name: "Budowa apartamentowca",
+      locatioin: "Wasrszawa, Polska",
+      investition: "3 lata",
+      offering: "15%",
+      more: "Szczegóły inwestycji",
+      latitude: "52.11786",
+      longitude: "21.77789",
+      link: "#"
+    }
+  ];
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 10,
+    center: { lat: 52.31784, lng: 21.68781 },
+    streetViewControl: false,
+    mapTypeControl: false,
+    styles: mapStyles
+  });
+
+  var infowindow = new google.maps.InfoWindow({
+    content: "loading..."
+  });
+  var markers = locations.map((location, i) => {
+    var marker = `./images/marker-${
+        location.inProgress ? "active" : "inactive"
+    }.png`;
+    return new google.maps.Marker({
+      position: {
+        lat: parseFloat(location.latitude),
+        lng: parseFloat(location.longitude)
+      },
+      icon: marker
+    });
+  });
+  locations.map(function(location, i) {
+    var html = generateInfowindow(location);
+    google.maps.event.addListener(markers[i], "click", function() {
+      infowindow.setContent(html);
+      infowindow.open(map, this);
+    });
+  });
+  // Add a marker clusterer to manage the markers.
+  var markerCluster = new MarkerClusterer(map, markers, {
+    imagePath:
+        "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m"
+  });
+};
+
 $(document).ready(function() {
-      APP.cookies.set("placeholder", "true");
+  APP.cookies.set("placeholder", "true");
   var NavY = $(".Menu-top").offset().top;
   var stickyNav = function() {
     var ScrollY = $(window).scrollTop();
@@ -16,6 +329,8 @@ $(document).ready(function() {
   $(window).scroll(function() {
     stickyNav();
   });
+
+  accordionInit();
   /**
    * =======================================
    * Function: VIEWPORTCHECKER FOR PROGRESS BAR
@@ -32,47 +347,60 @@ $(document).ready(function() {
       $(elem).css("width", $(elem).data("slideTo") + "%");
 
       $({ countNum: 0 }).animate(
-        {
-          countNum: countTo
-        },
-
-        {
-          duration: 800,
-          easing: "linear",
-          step: function() {
-            $Value.text(Math.floor(this.countNum));
+          {
+            countNum: countTo
           },
-          complete: function() {
-            $Value.text(String(this.countNum).replace(".", ","));
-            //alert('finished');
+
+          {
+            duration: 800,
+            easing: "linear",
+            step: function() {
+              $Value.text(Math.floor(this.countNum));
+            },
+            complete: function() {
+              $Value.text(String(this.countNum).replace(".", ","));
+              //alert('finished');
+            }
           }
-        }
       );
       $({ percentCountNum: 0 }).animate(
-        {
-          percentCountNum: percentCountTo
-        },
-
-        {
-          duration: 800,
-          easing: "linear",
-          step: function() {
-            $percent.text(Math.floor(this.percentCountNum));
+          {
+            percentCountNum: percentCountTo
           },
-          complete: function() {
-            $percent.text(this.percentCountNum);
-            //alert('finished');
+
+          {
+            duration: 800,
+            easing: "linear",
+            step: function() {
+              $percent.text(Math.floor(this.percentCountNum));
+            },
+            complete: function() {
+              $percent.text(this.percentCountNum);
+              //alert('finished');
+            }
           }
-        }
       );
     }
   });
 
   $(".Projects__card, .News .Card:not(.Card--single)").on("click", function(e) {
     $(this)
-      .find("a")[0]
-      .click();
+        .find("a")[0]
+        .click();
   });
+
+  $('.Contact__show-password').on('click', function(e) {
+    e.preventDefault();
+
+    const $input = $(this).siblings('input');
+
+    if($input.attr('type') === 'password') {
+      $input.attr('type', 'text')
+    } else {
+      $input.attr('type', 'password')
+    }
+
+  })
 
   $(".Projects__card a, .News .Card a").on("click", function(e) {
     e.stopPropagation();
@@ -93,8 +421,8 @@ $(document).ready(function() {
   });
   $(".Gallery__active").on("click", function(e) {
     const data = $(this)
-      .find("img")
-      .data();
+        .find("img")
+        .data();
     $.magnificPopup.open({
       items: {
         src: data.large
@@ -109,7 +437,7 @@ $(document).ready(function() {
   $("button.Cookies__close").on("click", function(e) {
     e.preventDefault();
     APP.cookies.hide();
-    APP.cookies.set("roualCookieAgree", "true", 30);
+    APP.cookies.set("roualCookieAgree", "true");
   });
   $(".Select-custom").on("click", function(e) {
     APP.select.showOptions.call(this);
@@ -131,57 +459,144 @@ $(document).ready(function() {
   });
   $(".Contact-form-mini__icon").on("click", function() {
     $(".Contact-form-mini__inner").toggleClass(
-      "Contact-form-mini__inner--active"
+        "Contact-form-mini__inner--active"
     );
     $(this).toggleClass("Contact-form-mini__icon--active");
   });
   $(".Menu-top__toggle-btn").on("click", function(e) {
     e.preventDefault();
-    $(".Menu-top__list").slideToggle();
+    $(".Menu-top__inner").addClass("Menu-top__inner--active");
+    $(".Menu-top__list").slideToggle(function() {
+      if (!$(this).is(":visible")) {
+        $(".Menu-top__inner").removeClass("Menu-top__inner--active");
+      }
+    });
+  });
+
+  $(".Accordion__card__header").on("click", function(e) {
+    e.preventDefault();
+    accordionInit($(this));
   });
   // Declare Carousel jquery object
-  var owl = $(".Slider .owl-carousel");
-  var owlNews = $(".News .owl-carousel");
+  const owl = $(".Slider .owl-carousel");
+  const owlNews = $(".News .owl-carousel");
+  const projects = $(".Projects .owl-carousel");
+  const partners = $(".Partners .owl-carousel");
+  const project = $(".Project .owl-carousel");
 
   // Carousel initialization
-  owl.owlCarousel({
-    loop: true,
-    margin: 0,
-    navSpeed: 500,
-    nav: false,
-    autoplay: true,
-    rewind: false,
-    items: 1,
-    dots: false,
-    animateOut: "fadeOut",
-    autoplayHoverPause: true,
-    navText: []
-  });
 
-  owlNews.owlCarousel({
-    loop: true,
-    margin: 40,
-    nav: false,
-    autoplay: true,
-    items: 3,
-    dots: false,
-    navSpeed: 1000,
-    navText: [],
-    autoplayHoverPause: true,
-    responsive: {
-      // breakpoint from 0 up
-      0: {
-        items: 1
-      },
-      // breakpoint from 480 up
-      600: {
-        items: 2
-      },
-      // breakpoint from 768 up
-      768: {
-        items: 3
+  if (owl.length) {
+    owl.owlCarousel({
+      loop: true,
+      margin: 0,
+      navSpeed: 500,
+      nav: true,
+      autoplay: true,
+      rewind: false,
+      items: 1,
+      dots: false,
+      animateOut: "fadeOut",
+      autoplayHoverPause: true
+    });
+  }
+
+  if (owlNews.length) {
+    owlNews.owlCarousel({
+      loop: true,
+      nav: true,
+      autoplay: false,
+      items: 1,
+      dots: false,
+      navSpeed: 1000,
+      autoplayHoverPause: true
+    });
+  }
+
+  if (projects.length) {
+    projects.owlCarousel({
+      loop: true,
+      margin: 40,
+      nav: true,
+      autoplay: true,
+      center: true,
+      items: 3,
+      dots: false,
+      navSpeed: 1000,
+      autoWidth: true,
+      autoplayHoverPause: true,
+      responsive: {
+        // breakpoint from 0 up
+        0: {
+          items: 1
+        },
+        // breakpoint from 480 up
+        600: {
+          items: 2
+        },
+        // breakpoint from 768 up
+        768: {
+          items: 3
+        }
       }
-    }
+    });
+  }
+
+  if (partners.length) {
+    partners.owlCarousel({
+      loop: true,
+      margin: 40,
+      nav: true,
+      autoplay: true,
+      items: 4,
+      dots: false,
+      navSpeed: 1000,
+      autoplayHoverPause: true,
+      responsive: {
+        // breakpoint from 0 up
+        0: {
+          items: 1
+        },
+        500: {
+          items: 2
+        },
+        // breakpoint from 480 up
+        600: {
+          items: 3
+        },
+        // breakpoint from 768 up
+        768: {
+          items: 3
+        },
+        1024: {
+          items: 4
+        }
+      }
+    });
+  }
+
+  if (project.length) {
+    project.owlCarousel({
+      items: 2,
+      loop: true,
+      mouseDrag: false,
+      touchDrag: false,
+      pullDrag: false,
+      rewind: false,
+      autoplay: false,
+      margin: 10,
+      nav: true,
+      dots: false,
+      autoWidth: true
+    });
+  }
+
+  project.on("changed.owl.carousel", function(event) {
+    const src = $(event.target)
+        .find(".active:first")
+        .find(".item")
+        .attr("src");
+    $(".Project__photo").attr("src", src);
   });
 
   if (cookie) {
@@ -212,15 +627,15 @@ $(document).ready(function() {
     e.preventDefault();
     e.stopPropagation();
     $(this)
-      .siblings("a")
-      .removeClass("active");
+        .siblings("a")
+        .removeClass("active");
     $(this)
-      .addClass("active")
-      .closest(".select-options")
-      .hide()
-      .closest(".custom-select-div")
-      .find("label")
-      .text($(this).text());
+        .addClass("active")
+        .closest(".select-options")
+        .hide()
+        .closest(".custom-select-div")
+        .find("label")
+        .text($(this).text());
   });
 });
 
@@ -231,9 +646,9 @@ const APP = {
     },
     setSelected({ data }) {
       $(this)
-        .closest(".Select-custom")
-        .find(".Select-custom__selected")
-        .text(data.value);
+          .closest(".Select-custom")
+          .find(".Select-custom__selected")
+          .text(data.value);
     },
     hide() {
       $(this).removeClass("Select-custom--active");
@@ -252,7 +667,7 @@ const APP = {
   },
   cookies: {
     hide() {
-      $(".Cookies").css({ left: "calc(-100% - 60px)", opacity: "0" });
+      $(".Cookies").hide();
     },
     get(name) {
       var nameEQ = name + "=";
@@ -328,22 +743,22 @@ $(document).mouseup(function(e) {
   // if the target of the click isn't the $contactForm nor a descendant of the $contactForm
   if (!$contactForm.is(e.target) && $contactForm.has(e.target).length === 0) {
     $(".Contact-form-mini__inner").removeClass(
-      "Contact-form-mini__inner--active"
+        "Contact-form-mini__inner--active"
     );
     $(".Contact-form-mini__icon").removeClass(
-      "Contact-form-mini__icon--active"
+        "Contact-form-mini__icon--active"
     );
   }
 });
 
 var observer = new IntersectionObserver(
-  function(entries) {
-    if (entries[0].intersectionRatio === 0)
-      document.querySelector(".Menu-top").classList.add("Menu-top--sticky");
-    else if (entries[0].intersectionRatio === 1)
-      document.querySelector(".Menu-top").classList.remove("Menu-top--sticky");
-  },
-  { threshold: [0, 1] }
+    function(entries) {
+      if (entries[0].intersectionRatio === 0)
+        document.querySelector(".Menu-top").classList.add("Menu-top--sticky");
+      else if (entries[0].intersectionRatio === 1)
+        document.querySelector(".Menu-top").classList.remove("Menu-top--sticky");
+    },
+    { threshold: [0, 1] }
 );
 
 //observer.observe(document.querySelector(".Top-pane"));
