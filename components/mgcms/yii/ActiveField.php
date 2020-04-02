@@ -4,7 +4,7 @@ namespace app\components\mgcms\yii;
 use Yii;
 use dosamigos\ckeditor\CKEditor;
 use app\extensions\mgcms\yii2TinymceWidget\TinyMce;
-use kartik\file\FileInput;
+use kartik\widgets\FileInput;
 use \app\components\mgcms\MgHelpers;
 use kartik\switchinput\SwitchInput;
 use \yii\helpers\ArrayHelper;

@@ -387,7 +387,7 @@ class ComposerStaticInite75127aa9cb36c4caa7c6aa06916e95c
         ),
         'kartik\\popover\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-popover-x',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-popover-x/src',
         ),
         'kartik\\plugins\\tabs\\' => 
         array (

@@ -40,7 +40,7 @@ return array(
     'kartik\\select2\\' => array($vendorDir . '/kartik-v/yii2-widget-select2/src'),
     'kartik\\rating\\' => array($vendorDir . '/kartik-v/yii2-widget-rating/src'),
     'kartik\\range\\' => array($vendorDir . '/kartik-v/yii2-widget-rangeinput/src'),
-    'kartik\\popover\\' => array($vendorDir . '/kartik-v/yii2-popover-x'),
+    'kartik\\popover\\' => array($vendorDir . '/kartik-v/yii2-popover-x/src'),
     'kartik\\plugins\\tabs\\' => array($vendorDir . '/kartik-v/bootstrap-tabs-x'),
     'kartik\\plugins\\strengthmeter\\' => array($vendorDir . '/kartik-v/strength-meter'),
     'kartik\\plugins\\popover\\' => array($vendorDir . '/kartik-v/bootstrap-popover-x'),
