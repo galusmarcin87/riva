@@ -12,6 +12,8 @@ use app\components\mgcms\MgHelpers;
 
 <?=$this->render('index/projects')?>
 
+<?=$this->render('index/map')?>
+
 <?=$this->render('index/2tiles')?>
 
 <?=$this->render('index/paralax')?>
