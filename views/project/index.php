@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ListView::widget([
             'dataProvider' => $dataProvider,
             'itemOptions' => [
-                'class' => false
+                'class' => 'Projects__card fadeIn animated'
             ],
             'options' => [
                 'class' => 'Projects__sortable animatedParent',

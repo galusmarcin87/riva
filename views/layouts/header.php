@@ -169,7 +169,7 @@ $menu = new NobleMenu(['name' => 'header_' . Yii::$app->language, 'loginLink' =>
     <div id="nav-container" class="Menu-top">
         <div class="container">
             <div class="Menu-top__inner">
-                <a href="#">
+                <a href="/">
                     <svg
                             id="Logo"
                             class="Menu-top__logo"

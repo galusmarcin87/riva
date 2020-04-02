@@ -16,7 +16,7 @@ $imageSrc = $article->file ? $article->file->getImageSrc(767, 559) : false;
         <div class="row animatedParent">
             <div class="col-md-<?= $imageSrc ? 6 :  12 ?> Section__text fadeIn animated">
                 <?= $article->excerpt ?>
-                <a class="btn btn-success" href="<?= $article->linkUrl ?>">
+                <a class="btn btn-success btn-success--outline btn-success--reverse-colors" href="<?= $article->linkUrl ?>">
                     <?= Yii::t('db', 'FIND OUT MORE'); ?>
                 </a>
             </div>
