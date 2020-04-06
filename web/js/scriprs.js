@@ -228,52 +228,7 @@ const initMap = () => {
     </div>`;
     return html;
   };
-  const locations = [
-    {
-      inProgress: false,
-      name: "Budowa apartamentowca",
-      locatioin: "Wasrszawa, Polska",
-      investition: "3 lata",
-      offering: "15%",
-      more: "Szczegóły inwestycji",
-      latitude: "52.31784",
-      longitude: "21.68781",
-      link: "#"
-    },
-    {
-      inProgress: true,
-      name: "Budowa apartamentowca",
-      locatioin: "Wasrszawa, Polska",
-      investition: "3 lata",
-      offering: "15%",
-      more: "Szczegóły inwestycji",
-      latitude: "52.31786",
-      longitude: "21.97789",
-      link: "#"
-    },
-    {
-      inProgress: false,
-      name: "Budowa apartamentowca",
-      locatioin: "Wasrszawa, Polska",
-      investition: "3 lata",
-      offering: "15%",
-      more: "Szczegóły inwestycji",
-      latitude: "52.21784",
-      longitude: "21.28781",
-      link: "#"
-    },
-    {
-      inProgress: true,
-      name: "Budowa apartamentowca",
-      locatioin: "Wasrszawa, Polska",
-      investition: "3 lata",
-      offering: "15%",
-      more: "Szczegóły inwestycji",
-      latitude: "52.11786",
-      longitude: "21.77789",
-      link: "#"
-    }
-  ];
+
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 10,
     center: { lat: 52.31784, lng: 21.68781 },
@@ -285,18 +240,23 @@ const initMap = () => {
   var infowindow = new google.maps.InfoWindow({
     content: "loading..."
   });
+  bounds  = new google.maps.LatLngBounds();
   var markers = locations.map((location, i) => {
-    var marker = `./images/marker-${
+    var marker = `/images/marker-${
         location.inProgress ? "active" : "inactive"
     }.png`;
-    return new google.maps.Marker({
+    let markerObj = new google.maps.Marker({
       position: {
         lat: parseFloat(location.latitude),
         lng: parseFloat(location.longitude)
       },
       icon: marker
     });
+    loc = new google.maps.LatLng(markerObj.position.lat(), markerObj.position.lng());
+    bounds.extend(loc);
+    return markerObj;
   });
+  map.fitBounds(bounds);
   locations.map(function(location, i) {
     var html = generateInfowindow(location);
     google.maps.event.addListener(markers[i], "click", function() {

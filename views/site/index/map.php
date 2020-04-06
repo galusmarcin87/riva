@@ -1,3 +1,12 @@
+<?
+
+use app\models\mgcms\db\Project;
+
+$projects = Project::find()->all();
+
+
+?>
+
 <section class="Map">
     <div class="animatedParent">
         <div class="Map__info">
@@ -11,11 +20,24 @@
 </section>
 
 <script>
+    const locations = [];
+    <?foreach ($projects as $project):?>
+    locations.push({
+        inProgress: <?= $project->status == Project::STATUS_ACTIVE ? 'true' : 'false'?>,
+        name: "<?=trim($project->name)?>",
+        locatioin: "<?=$project->localization?>",
+        investition: "<?=$project->investition_time?>",
+        offering: "<?=$project->percentage?>%",
+        more: "<?= Yii::t('db', 'Details of investition'); ?>",
+        latitude: "<?=$project->gps_lat?>",
+        longitude: "<?=$project->gps_long?>",
+        link: "<?=$project->getLinkUrl()?>"
+    });
+    <?endforeach;?>
     window.addEventListener('DOMContentLoaded', (event) => {
         initMap();
     })
 </script>
 
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeGtxbtJfB88Fgff3N_um_SjNBNAROskU"
-></script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeGtxbtJfB88Fgff3N_um_SjNBNAROskU"></script>
+<script async src="https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>
