@@ -10,9 +10,22 @@ if (!$category) {
 $articles = \app\models\mgcms\db\Article::find()->where(['category_id' => $category->id])->limit(6)->all();
 
 ?>
-<section class="Section News animatedParent marginTop0">
+<section class="Section News animatedParent">
     <div class="container fadeIn animated">
-        <h2 class="text-center"><?= Yii::t('db', 'News'); ?></h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <h4 class="Projects__header"><?= Yii::t('db', 'News'); ?></h4>
+            </div>
+            <div class="col-sm-8 text-right">
+                <div class="Projects__filter">
+                    <a
+                            href="<?= $category->linkUrl ?>"
+                            class="btn btn-success btn-success--outline btn-success--reverse-colors"
+                    ><?= Yii::t('db', 'See all'); ?></a
+                    >
+                </div>
+            </div>
+        </div>
         <div class="Carousel">
             <div class="owl-carousel owl-theme animatedParent">
                 <? foreach ($articles as $article): ?>
@@ -20,15 +33,6 @@ $articles = \app\models\mgcms\db\Article::find()->where(['category_id' => $categ
                 <? endforeach; ?>
 
             </div>
-            <div class="text-center Carousel__arrows">
-                <a class="News__arrow--left" href="#">
-                    <img src="/images/arr-left-green.png" alt=""/>
-                </a>
-                <a class="News__arrow--right" href="#">
-                    <img src="/images/arr-right-green.png" alt=""/>
-                </a>
-            </div>
         </div>
-        <a href="<?= $category->linkUrl ?>" class="btn btn-success btn-block"><?= Yii::t('db', 'SEE ALL'); ?></a>
     </div>
 </section>

@@ -34,10 +34,18 @@ $projects = Project::find()->all();
         link: "<?=$project->getLinkUrl()?>"
     });
     <?endforeach;?>
+    var mapScriptLoaded = 0;
     window.addEventListener('DOMContentLoaded', (event) => {
-        initMap();
+        mapScriptLoaded++;
     })
+    function initMapScript(){
+        mapScriptLoaded++;
+        if(mapScriptLoaded == 3){
+            initMap();
+        }
+
+    }
 </script>
 
-<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeGtxbtJfB88Fgff3N_um_SjNBNAROskU"></script>
-<script async src="https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeGtxbtJfB88Fgff3N_um_SjNBNAROskU" onload="initMapScript()"></script>
+<script async src="https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js" onload="initMapScript()"></script>

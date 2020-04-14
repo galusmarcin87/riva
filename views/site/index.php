@@ -14,13 +14,11 @@ use app\components\mgcms\MgHelpers;
 
 <?=$this->render('index/map')?>
 
-<?=$this->render('index/2tiles')?>
-
 <?=$this->render('index/paralax')?>
 
 <?=$this->render('/common/news')?>
 
-<?=$this->render('index/writeAboutUs')?>
+<?=$this->render('index/cooperateWith')?>
 
 <?=$this->render('index/faq')?>
 
