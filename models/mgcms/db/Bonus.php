@@ -25,11 +25,13 @@ class Bonus extends \app\models\mgcms\db\AbstractRecord
     public function rules()
     {
         return [
-            [['from', 'to', 'value', 'project_id'], 'required'],
-            [['from', 'to', 'value', 'project_id'], 'integer']
+            [['from', 'value', 'project_id'], 'required'],
+            [['to', 'project_id'], 'integer'],
+            [['from'], 'string', 'max' => 255],
+            [['value'], 'string'],
         ];
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -45,13 +47,13 @@ class Bonus extends \app\models\mgcms\db\AbstractRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'from' => Yii::t('app', 'Od'),
+            'from' => Yii::t('app', 'Nagłówek'),
             'to' => Yii::t('app', 'Do'),
-            'value' => Yii::t('app', 'Wartość'),
+            'value' => Yii::t('app', 'Tekst'),
             'project_id' => Yii::t('app', 'Project'),
         ];
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -59,7 +61,7 @@ class Bonus extends \app\models\mgcms\db\AbstractRecord
     {
         return $this->hasOne(\app\models\mgcms\db\Project::className(), ['id' => 'project_id']);
     }
-    
+
     /**
      * @inheritdoc
      * @return \app\models\mgcms\db\BonusQuery the active query used by this AR class.

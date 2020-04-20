@@ -171,7 +171,7 @@ use app\components\mgcms\MgHelpers;
     <?php
     $forms = [
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'Bonus')),
+            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'Właściwosci')),
             'content' => $this->render('_formBonus', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->bonuses),
             ]),

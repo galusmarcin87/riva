@@ -7,65 +7,107 @@ use yii\web\View;
 /* @var $model Project */
 
 ?>
-<div class="Card-horizontal__list">
-    <div class="Card-horizontal__list__item">
-        <?= Yii::t('db', 'Localization'); ?>:
-        <div class="pull-right">
-            <b><?= $model->localization ?></b>
-        </div>
-    </div>
-    <div class="Card-horizontal__list__item">
-        <?= Yii::t('db', 'Investition time'); ?>:
-        <div class="pull-right">
-            <b id="investition_time"><?= $model->investition_time ?></b>
-        </div>
-    </div>
-    <div class="Card-horizontal__list__item">
-        <?= Yii::t('db', 'Annual profit'); ?>:
-        <div class="pull-right">
-            <b><?= $model->percentage ?>%</b>
-        </div>
-    </div>
-    <div class="Card-horizontal__list__item">
-        <?= Yii::t('db', 'Pre-sale start'); ?>:
-        <div class="pull-right">
-            <b><?= $model->date_presale_start ?></b>
-        </div>
-    </div>
-    <div class="Card-horizontal__list__item">
-        <?= Yii::t('db', 'Pre-sale end'); ?>:
-        <div class="pull-right">
-            <b><?= $model->date_presale_end ?></b>
-        </div>
-    </div>
-    <div class="Card-horizontal__list__item">
-        <?= Yii::t('db', 'Crowdsale start'); ?>:
-        <div class="pull-right">
-            <b><?= $model->date_crowdsale_start ?></b>
-        </div>
-    </div>
-    <div class="Card-horizontal__list__item">
-        <?= Yii::t('db', 'Crowdsale end'); ?>:
-        <div class="pull-right">
-            <b><?= $model->date_crowdsale_end ?></b>
-        </div>
-    </div>
-    <div class="Card-horizontal__list__item">
-        <?= Yii::t('db', 'Crowdsale profit'); ?>:
-        <div class="pull-right">
-            <b><?= $model->percentage ?></b>
-        </div>
-    </div>
-    <div class="Card-horizontal__list__item">
-        <?= Yii::t('db', 'Pre-sale bonus'); ?>:
-        <div class="pull-right">
-            <b><?= $model->percentage_presale_bonus ?></b>
-        </div>
-    </div>
-    <div class="Card-horizontal__list__item">
-        <?= Yii::t('db', 'Profit realization'); ?>:
-        <div class="pull-right">
-            <b><?= $model->date_realization_profit ?></b>
-        </div>
-    </div>
-</div>
+
+    <ul class="List-custom__two">
+        <li class="List-custom__two__item">
+                <span>
+                   <?= Yii::t('db', 'Localization'); ?>:
+            </span>
+            <span>
+                  <strong>
+                    <?= $model->localization ?>
+                  </strong>
+                </span>
+        </li>
+        <li class="List-custom__two__item">
+                <span>
+                  <?= Yii::t('db', 'Value'); ?>:
+                </span>
+            <span>
+                  <strong>
+                    <?=$model->token_value?>
+                  </strong>
+                </span>
+        </li>
+        <li class="List-custom__two__item">
+                <span>
+                  <?= Yii::t('db', 'Investition'); ?>:
+                </span>
+            <span>
+                  <strong>
+                    <?= $model->investition_time ?>
+                  </strong>
+                </span>
+        </li>
+        <li class="List-custom__two__item">
+                <span>
+                  <?= Yii::t('db', 'Offered'); ?>:
+                </span>
+            <span>
+                  <strong>
+                    <?=$model->percentage?>
+                  </strong>
+                </span>
+        </li>
+        <li class="List-custom__two__item">
+                <span>
+                  <?= Yii::t('db', 'Pre-sale start'); ?>:
+                </span>
+            <span>
+                  <strong>
+                    <?= $model->date_presale_start ?>
+                  </strong>
+                </span>
+        </li>
+        <li class="List-custom__two__item">
+                <span>
+                  <?= Yii::t('db', 'Pre-sale end'); ?>:
+                </span>
+            <span>
+                  <strong>
+                    <?= $model->date_presale_end ?>
+                  </strong>
+                </span>
+        </li>
+        <li class="List-custom__two__item">
+                <span>
+                  <?= Yii::t('db', 'Crowdsale start'); ?>:
+                </span>
+            <span>
+                  <strong>
+                    <?= $model->date_crowdsale_start ?>
+                  </strong>
+                </span>
+        </li>
+        <li class="List-custom__two__item">
+                <span>
+                  <?= Yii::t('db', 'Crowdsale end'); ?>:
+                </span>
+            <span>
+                  <strong>
+                    <?= $model->date_crowdsale_end ?>
+                  </strong>
+                </span>
+        </li>
+        <li class="List-custom__two__item">
+                <span>
+                  <?= Yii::t('db', 'Crowdsale profit'); ?>:
+                </span>
+            <span>
+                  <strong>
+                    <?= $model->date_realization_profit ?>
+                  </strong>
+                </span>
+        </li>
+        <li class="List-custom__two__item">
+                <span>
+                  <?= Yii::t('db', 'Pre-sale bonus'); ?>:
+                </span>
+            <span>
+                  <strong>
+                    <?= $model->percentage_presale_bonus ?>
+                  </strong>
+                </span>
+        </li>
+    </ul>
+

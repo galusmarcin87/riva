@@ -34,7 +34,6 @@ class ProjectController extends \app\components\mgcms\MgCmsController
      */
     public function actionView($name)
     {
-        \branchonline\lightbox\Lightbox::widget();
         $model = Project::find()->where(['name' => $name])->one();
         if (!$model) {
             throw new \yii\web\HttpException(404, Yii::t('app', 'Not found'));

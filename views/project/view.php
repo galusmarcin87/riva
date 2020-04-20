@@ -25,131 +25,137 @@ $model->language = Yii::$app->language;
 
 <?= $this->render('/common/breadcrumps') ?>
 
-<section class="Section Section--grey Project">
+<Section class="Section Project">
     <div class="container">
-        <div class="Project__header">
-            <div class="Project__image">
-                <?= $model->file->getImage(650, 400, [], \Imagine\Image\ManipulatorInterface::THUMBNAIL_OUTBOUND); ?>
-                <? if ($model->flag && $model->flag->isImage()): ?>
-                    <div class="Projects__card__country-flag">
-                        <img src="<?= $model->flag->getImageSrc(30, 20); ?>"/>
+        <h1><?= $model->name ?></h1>
+        <div class="Project__content">
+            <? if ($model->file && $model->file->isImage()): ?>
+                <?= $model->file->getImage(705, 605, ['class' => 'Project__photo'], \Imagine\Image\ManipulatorInterface::THUMBNAIL_OUTBOUND); ?>
+            <? endif ?>
+            <div class="Project__info">
+                <div class="Project__slider">
+                    <div class="owl-carousel">
+                        <? foreach ($model->files as $file): ?>
+                            <? if ($file->isImage()): ?>
+                                <img src="<?= $file->getImageSrc(705, 605) ?>" class="item">
+                            <? endif; ?>
+                        <? endforeach; ?>
                     </div>
-                <?endif;?>
+                </div>
+                <div class="Project__info__content">
+                    <?= $this->render('view/table', ['model' => $model]) ?>
+                    <div class="Invest-counter">
+                        <div class="Invest-counter__body">
+                            <div class="Invest-counter__body__heading">
+                                <?= Yii::t('db', 'Time left'); ?>
+                            </div>
+                            <div
+                                    data-date="<?= $model->date_crowdsale_end ?>"
+                                    class="Count-down-timer"
+                            >
+                                <div class="Count-down-timer__day">
+                                    <span></span> <?= Yii::t('db', 'days'); ?>
+                                </div>
+                                <div class="Count-down-timer__hour">
+                                    <span></span> <?= Yii::t('db', 'hours'); ?>
+                                </div>
+                                <div class="Count-down-timer__minute">
+                                    <span></span> <?= Yii::t('db', 'minutes'); ?>
+                                </div>
+                                <div class="Count-down-timer__second">
+                                    <span></span> <?= Yii::t('db', 'seconds'); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Invest-counter__header">
+                            <div class="Invest-counter__source">
+                                $<span class="Invest-counter__source__value"><?= MgHelpers::convertNumberToNiceString($model->money) ?></span>
+                                <? if ($model->money_full): ?>
+                                    (<span data-to="<?= round(($model->money / $model->money_full) * 100, 3) ?>"
+                                           class="Invest-counter__source__percent">0</span>%)
+                                <? endif; ?>
+                            </div>
+                            <div class="Invest-counter__target">
+                                $<?= MgHelpers::convertNumberToNiceString($model->money_full) ?>
+                            </div>
+                        </div>
+                        <div class="Invest-counter__value-line-wrapper">
+                            <div
+                                    data-to="<?= $model->money ?>"
+                                <? if ($model->money_full): ?>
+                                    data-slide-to="<?= round(($model->money / $model->money_full) * 100, 3) ?>"
+                                <? endif; ?>
+                                    class="Invest-counter__value-line" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <a class="btn btn-success btn-block btn--lowercase btn--line-top"
+                       href="<?= Url::to(['project/buy', 'id' => $model->id]) ?>"><?= Yii::t('db', 'Invest'); ?></a>
+                </div>
             </div>
-            <div id="map" class="Project__location"></div>
         </div>
         <div class="Project__content">
-            <div>
-                <?= $model->lead ?>
-                <? if ($model->files && sizeof($model->files) > 0 && $model->files[0]->isImage()): ?>
-                    <div class="Gallery">
-                        <div class="Gallery__active">
-                            <img data-large="<?= $model->files[0]->getImageSrc(524, 524) ?>"
-                                 src="<?= $model->files[0]->getImageSrc(524, 524) ?>">
-                        </div>
-                        <div class="Gallery__list">
-                            <? foreach ($model->files as $file): ?>
-                                <? if ($file->isImage()): ?>
-                                    <img data-medium="<?= $file->getImageSrc(1000, 1000) ?>"
-                                         data-large="<?= $file->getImageSrc(524, 524) ?>"
-                                         src="<?= $file->getImageSrc(108, 108) ?>">
-                                <? endif; ?>
-                            <? endforeach; ?>
-                        </div>
-                    </div>
-                <? endif; ?>
+            <div class="Project__map" id="map"></div>
+            <? if (sizeof($model->bonuses) > 0): ?>
+
+
+                <div>
+                    <ul class="List-custm__checklist">
+                        <? foreach ($model->bonuses as $bonus): ?>
+                            <li class="List-custm__checklist__item">
+                                <strong><?= $bonus->from ?></strong> <?= $bonus->value ?>
+                            </li>
+                        <? endforeach; ?>
+                    </ul>
+                </div>
+            <? endif; ?>
+        </div>
+    </div>
+    <div class="container">
+        <p>
+            <?= $model->lead ?>
+        </p>
+        <p>
+            <small>
                 <?= $model->text ?>
-                <a class="btn btn-success btn-block"
-                   href="<?= Url::to(['project/buy', 'id' => $model->id]) ?>">
-                    <?= Yii::t('db', 'INVEST'); ?>
-                </a>
-                <a class="btn btn-primary btn-block" href="javascript:openCalculator()">
-                    <?= Yii::t('db', 'Calculate your income'); ?>
-                </a>
+            </small>
+        </p>
+        <a class="btn btn-success btn--lowercase btn--medium btn--line-top"
+           href="<?= Url::to(['project/buy', 'id' => $model->id]) ?>"><?= Yii::t('db', 'Invest'); ?></a>
+        <div class="White-text-block">
+            <div>
+                <h5 class="White-text-block__header">
+                    <strong><?= MgHelpers::getSettingTranslated('project - first column header', 'Masz pytania? Świetnie!') ?></strong><br>
+                    <?= MgHelpers::getSettingTranslated('project - first column rest', 'Chętnie odpowiemy.<br>Skontaktuj się z nami.') ?>
+                </h5>
             </div>
             <div>
-                <a class="btn btn-success btn-block" href="<?= Url::to(['project/buy', 'id' => $model->id]) ?>">
-                    <?= Yii::t('db', 'INVEST'); ?>
-                </a>
-                <div class="Project__action">
-                    <a class="btn btn-primary" href="<?= $model->whitepaper ?>">
-                        <?= Yii::t('db', 'WHITEPAPER'); ?>
-                    </a>
-                    <a class="btn btn-primary" href="<?= $model->www ?>">
-                        <?= Yii::t('db', 'WWW'); ?>
-                    </a>
-                </div>
-                <div class="Invest-counter">
-                    <div class="Invest-counter__header">
-                        <div class="Invest-counter__source">
-                            $<span class="Invest-counter__source__value"><?= MgHelpers::convertNumberToNiceString($model->money) ?></span>
-                            <?if($model->money_full):?>
-                            (<span data-to="<?= round(($model->money / $model->money_full) * 100, 3) ?>"
-                                   class="Invest-counter__source__percent">0</span>%)
-                            <?endif;?>
-                        </div>
-                        <div class="Invest-counter__target">
-                            $<?= MgHelpers::convertNumberToNiceString($model->money_full) ?>
-                        </div>
-                    </div>
-                    <div class="Invest-counter__value-line-wrapper">
-                        <div
-                                data-to="<?= $model->money ?>"
-                                <?if($model->money_full):?>
-                                    data-slide-to="<?= round(($model->money / $model->money_full) * 100, 3) ?>"
-                                <?endif;?>
-                                class="Invest-counter__value-line" style="width: 0%"></div>
-                    </div>
-                    <div class="Invest-counter__body">
-                        <div class="Invest-counter__body__heading">
-                            <?= Yii::t('db', 'Time left'); ?>:
-                        </div>
-                        <div
-                                data-date="<?= $model->date_crowdsale_end ?>"
-                                class="Count-down-timer"
-                        >
-                            <div class="Count-down-timer__day">
-                                <span></span> <?= Yii::t('db', 'days'); ?>
-                            </div>
-                            <div class="Count-down-timer__hour">
-                                <span></span> <?= Yii::t('db', 'hours'); ?>
-                            </div>
-                            <div class="Count-down-timer__minute">
-                                <span></span> <?= Yii::t('db', 'minutes'); ?>
-                            </div>
-                            <div class="Count-down-timer__second">
-                                <span></span> <?= Yii::t('db', 'seconds'); ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="Invest-counter__footer">
-                        <div><?= Yii::t('db', 'Investition'); ?>: <strong><?= $model->investition_time ?></strong></div>
-                        <div class="text-right"><?= Yii::t('db', 'Offered'); ?>: <strong><?= $model->percentage ?>
-                                %</strong>
-                        </div>
-                    </div>
+                <p>
+                    <span class="White-text-block__highline"><?= MgHelpers::getSettingTranslated('project - second column header', 'RIVA Finance') ?></span><br>
+                    <?= MgHelpers::getSettingTranslated('project - second column', 'Adam Kowalski - Specjalista ds. inwestycji
+                    <br>
+                    <a href="tel+48 502 502 502">+48 502 502 502</a>
+                    <br>
+                    <a href="mailto:jan.nowak@propertyinvestment.pl">jan.nowak@propertyinvestment.pl</a>') ?>
 
-                    <?= $this->render('view/table', ['model' => $model]) ?>
-
-                    <strong>
-                        <?= Yii::t('db', 'TOKEN'); ?>
-                    </strong>
-
-                    <?= $this->render('view/tokenTable', ['model' => $model]) ?>
-
-                    <strong>
-                        <?= Yii::t('db', 'BONUS FOR SALE'); ?>
-                    </strong>
-
-                    <?= $this->render('view/bonuses', ['model' => $model]) ?>
-
-
-                </div>
+                </p>
             </div>
-</section>
+            <div>
+                <p>
+                    <span class="White-text-block__highline"><?= MgHelpers::getSettingTranslated('project - third column header', 'RIVA Finance') ?></span><br>
+                    <?= MgHelpers::getSettingTranslated('project - third column', 'Adam Kowalski - Specjalista ds. inwestycji
+                    <br>
+                    <a href="tel+48 502 502 502">+48 502 502 502</a>
+                    <br>
+                    <a href="mailto:jan.nowak@propertyinvestment.pl">jan.nowak@propertyinvestment.pl</a>') ?>
+                </p>
+            </div>
+        </div>
+    </div>
+</Section>
 
+
+<?= $this->render('/common/projects', ['header' => 'Other projects', 'showLink' => false]) ?>
 <?= $this->render('/common/newsletterForm') ?>
-<?= $this->render('/common/news') ?>
 
-<?= $this->render('view/script', ['model' => $model]) ?>
-<?= $this->render('view/calculator', ['model' => $model]) ?>
+
+

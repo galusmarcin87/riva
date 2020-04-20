@@ -10,7 +10,7 @@ use app\components\mgcms\MgHelpers;
 
 <?=$this->render('index/section1')?>
 
-<?=$this->render('index/projects')?>
+<?=$this->render('/common/projects')?>
 
 <?=$this->render('index/map')?>
 

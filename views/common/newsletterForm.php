@@ -30,7 +30,7 @@ use app\components\mgcms\MgHelpers;
                                     required
                             />
                             <label class="Form__label" for="phone"
-                            >Wpisz swój adres e-mail</label
+                            ><?= Yii::t('db', 'Enter your email address'); ?></label
                             >
                         </div>
 
