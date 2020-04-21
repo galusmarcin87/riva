@@ -8,7 +8,7 @@ use app\components\mgcms\MgHelpers;
 
 ?>
 
-<section class="Section text-center animatedParent Section--fixed-bg" style="background-image: url(./images/newsletter_bg.jpg);">
+<section class="Section text-center animatedParent Section--fixed-bg" style="background-image: url(/images/newsletter_bg.jpg);">
     <div class="container fadeIn animated">
         <div class="row">
             <div class="col-lg-10 offset-lg-1">

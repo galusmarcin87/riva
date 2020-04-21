@@ -157,5 +157,5 @@ $model->language = Yii::$app->language;
 <?= $this->render('/common/projects', ['header' => 'Other projects', 'showLink' => false]) ?>
 <?= $this->render('/common/newsletterForm') ?>
 
-
+<?= $this->render('view/script', ['model' => $model]) ?>
 
