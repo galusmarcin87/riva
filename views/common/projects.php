@@ -60,6 +60,7 @@ $showLink = isset($showLink) ? $showLink : true;
             'options' => ['class' => 'owl-carousel owl-theme Projects__sortable animatedParent'],
             'itemOptions' => ['class' => 'Projects__card fadeIn animated'],
             'emptyTextOptions' => ['class' => 'col-md-12'],
+            'layout' => '{items}',
             'itemView' => function ($model, $key, $index, $widget) {
                 return $this->render('/project/_tileItem',
                     [

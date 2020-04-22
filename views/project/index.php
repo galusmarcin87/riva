@@ -71,4 +71,3 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?=$this->render('/common/newsletterForm')?>
 
-<?=$this->render('/common/news')?>

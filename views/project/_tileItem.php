@@ -12,7 +12,7 @@ $model->language = Yii::$app->language;
 
 <? if ($model->file && $model->file->isImage()): ?>
     <div class="Projects__card__image-wrapper">
-        <img src=".<?= $model->file->getImageSrc(455, 303); ?>" alt=""/>
+        <img src="<?= $model->file->getImageSrc(455, 303); ?>" alt=""/>
     </div>
 <? endif; ?>
 <div class="Projects__card__header">
