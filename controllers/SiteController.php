@@ -341,4 +341,9 @@ class SiteController extends \app\components\mgcms\MgCmsController
             'dataProvider' => $dataProvider
         ]);
     }
+
+    public function actionWouldYouLikeToInvest(){
+
+        return $this->render('wouldYouLikeToInvest');
+    }
 }

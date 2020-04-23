@@ -74,5 +74,13 @@ return [
             ],
             'route' => '/site/register',
         ],
+        [
+            'class' => 'geertw\Yii2\TranslatableUrlRule\TranslatableUrlRule',
+            'patterns' => [
+                'en' => '/would-you-like-to-invest',
+                'pl' => '/chcesz-zainwestowac',
+            ],
+            'route' => '/site/would-you-like-to-invest',
+        ],
     ],
 ];
