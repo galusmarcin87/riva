@@ -4,7 +4,6 @@
 ?>
 
 <h1><?= Yii::t('db', 'Contact'); ?></h1>
-<h2><?= Yii::t('db', 'Subject'); ?>: <?= $model->subject ?></h2>
 
 <p>Imię i nazwisko: <?= $model->name ?></p>
 <p>Telefon: <?= $model->phone ?></p>

@@ -19,6 +19,7 @@ class ContactForm extends Model
     public $body;
     public $reCaptcha;
     public $acceptTerms;
+    public $acceptTerms2;
 
 
     /**
@@ -28,12 +29,12 @@ class ContactForm extends Model
     {
         return [
             // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body'], 'required'],
+            [['name', 'email','body'], 'required'],
             // email has to be a valid email address
             ['email', 'email'],
             // verifyCode needs to be entered correctly
 //            [['reCaptcha'], \app\components\mgcms\recaptcha\ReCaptchaValidator::className()],
-            ['acceptTerms', 'required', 'requiredValue' => 1, 'message' => Yii::t('db', 'This field is required')],
+            [['acceptTerms','acceptTerms2'], 'required', 'requiredValue' => 1, 'message' => Yii::t('db', 'This field is required')],
         ];
     }
 
@@ -49,6 +50,7 @@ class ContactForm extends Model
             'phone' => Yii::t('db', 'Phone'),
             'body' => Yii::t('db', 'Message'),
             'acceptTerms' => Yii::t('db', MgHelpers::getSettingTranslated('contact_accept_terms_text','I accept terms and conditions')),
+            'acceptTerms2' => Yii::t('db', MgHelpers::getSettingTranslated('contact_accept_terms_text','I accept rules')),
             'verifyCode' => 'Verification Code',
         ];
     }
@@ -71,7 +73,7 @@ class ContactForm extends Model
             Yii::$app->mailer->compose('contact', ['model' => $this])
                 ->setTo($email)
                 ->setFrom([$this->email => $this->name])
-                ->setSubject($this->subject)
+                ->setSubject('Kontakt')
                 ->send();
             MgHelpers::getSettingTranslated('contact_mail_notification', 'Thank you for contacting us');
             return true;
