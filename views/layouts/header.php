@@ -273,9 +273,12 @@ $menu = new NobleMenu(['name' => 'header_' . Yii::$app->language, 'loginLink' =>
                 <a href="#" class="Menu-top__search-btn">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </a>
-                <a href="#" class="Menu-top__login-btn btn btn-primary">
-                    Zaloguj
-                </a>
+                <? if (Yii::$app->user->isGuest): ?>
+                    <a href="<?= yii\helpers\Url::to(['/site/login']) ?>" class="Menu-top__login-btn btn btn-primary"> <?= Yii::t('db', 'Login'); ?> </a>
+                <? else: ?>
+                    <a href="<?= yii\helpers\Url::to(['/site/account']) ?>" class="Menu-top__login-btn btn btn-primary"> <?= Yii::t('db', 'My account'); ?> </a>
+                <? endif; ?>
+
                 <a href="#" class="Menu-top__toggle-btn">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </a>
@@ -308,8 +311,6 @@ $menu = new NobleMenu(['name' => 'header_' . Yii::$app->language, 'loginLink' =>
         </div>
     </div>
 </div>
-
-
 
 
 <?= $this->render('_loginForm') ?>

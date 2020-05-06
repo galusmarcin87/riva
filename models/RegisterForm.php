@@ -27,7 +27,7 @@ class RegisterForm extends Model
     {
         return [
             // username and password are both required
-            [['username', 'firstName', 'surname', 'password', 'passwordRepeat'], 'required'],
+            [['username',  'password', 'passwordRepeat'], 'required'],
             ['passwordRepeat', 'compare', 'compareAttribute' => 'password', 'message' => Yii::t('db', "Passwords don't match")],
             ['acceptTerms', 'required', 'requiredValue' => 1, 'message' => Yii::t('db', 'This field is required')],
             ['username', 'email'],
@@ -51,6 +51,7 @@ class RegisterForm extends Model
 
     public function register()
     {
+
         if ($this->validate()) {
             $user = new mgcms\db\User;
             $user->username = $this->username;

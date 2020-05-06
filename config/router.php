@@ -26,6 +26,7 @@ return [
         '/my-account' => '/site/account',
         '/tag/<tagSlug>' => '/article/tag',
         '/buy/<slug>' => '/project/buy',
+        '/login' => '/site/login',
         [
             'class' => 'geertw\Yii2\TranslatableUrlRule\TranslatableUrlRule',
             'patterns' => [
@@ -57,22 +58,6 @@ return [
                 'pl' => '/baza-wiedzy',
             ],
             'route' => '/site/knowledge-base',
-        ],
-        [
-            'class' => 'geertw\Yii2\TranslatableUrlRule\TranslatableUrlRule',
-            'patterns' => [
-                'en' => '/login',
-                'pl' => '/logowanie',
-            ],
-            'route' => '/site/login',
-        ],
-        [
-            'class' => 'geertw\Yii2\TranslatableUrlRule\TranslatableUrlRule',
-            'patterns' => [
-                'en' => '/register',
-                'pl' => '/rejestracja',
-            ],
-            'route' => '/site/register',
         ],
         [
             'class' => 'geertw\Yii2\TranslatableUrlRule\TranslatableUrlRule',
