@@ -325,6 +325,13 @@ class MgHelpers extends \yii\base\Component
         return $retArray;
     }
 
+    /**
+     * @param $name
+     * @param bool $textValue
+     * @param string $defaultValue
+     * @param string $type System or text
+     * @return string
+     */
     public static function getSetting($name, $textValue = false, $defaultValue = '', $type = Setting::TYPE_SYSTEM)
     {
         $setting = Setting::find()->cache(36000)->where(['key' => $name, 'type' => $type])->one();
@@ -351,6 +358,13 @@ class MgHelpers extends \yii\base\Component
         return $textValue ? $setting->value_text : $setting->value;
     }
 
+    /**
+     * get setting by type text (non system)
+     * @param $name
+     * @param bool $textValue
+     * @param string $defaultValue
+     * @return string
+     */
     public static function getSettingTypeText($name, $textValue = false, $defaultValue = '')
     {
         return self::getSetting($name, $textValue, $defaultValue, Setting::TYPE_TEXT);

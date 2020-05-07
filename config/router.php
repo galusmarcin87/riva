@@ -67,5 +67,13 @@ return [
             ],
             'route' => '/site/would-you-like-to-invest',
         ],
+        [
+            'class' => 'geertw\Yii2\TranslatableUrlRule\TranslatableUrlRule',
+            'patterns' => [
+                'en' => '/about-us',
+                'pl' => '/o-nas',
+            ],
+            'route' => '/site/about-us',
+        ],
     ],
 ];

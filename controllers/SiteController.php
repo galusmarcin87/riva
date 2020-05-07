@@ -346,4 +346,9 @@ class SiteController extends \app\components\mgcms\MgCmsController
 
         return $this->render('wouldYouLikeToInvest');
     }
+
+    public function actionAboutUs(){
+
+        return $this->render('aboutUs');
+    }
 }
