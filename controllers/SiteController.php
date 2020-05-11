@@ -351,4 +351,9 @@ class SiteController extends \app\components\mgcms\MgCmsController
 
         return $this->render('aboutUs');
     }
+
+    public function actionAboutOurPlatform(){
+
+        return $this->render('aboutOurPlatform');
+    }
 }

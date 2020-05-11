@@ -75,5 +75,13 @@ return [
             ],
             'route' => '/site/about-us',
         ],
+        [
+            'class' => 'geertw\Yii2\TranslatableUrlRule\TranslatableUrlRule',
+            'patterns' => [
+                'en' => '/about-our-platform',
+                'pl' => '/o-naszej-platformie',
+            ],
+            'route' => '/site/about-our-platform',
+        ],
     ],
 ];

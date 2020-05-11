@@ -20,6 +20,6 @@ use app\components\mgcms\MgHelpers;
 
 <?=$this->render('index/cooperateWith')?>
 
-<?=$this->render('index/faq')?>
+<?=$this->render('/common/faq')?>
 
 <?=$this->render('/common/newsletterForm')?>
