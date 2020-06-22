@@ -11,7 +11,7 @@ use yii\helpers\Json;
 class ApiController extends \app\components\mgcms\MgCmsController
 {
 
-  const API_KEY = 'ASD08adsHD**HDJJ&^@kKD_';
+  const API_KEY = 'KsadasIASUd62378**asdkk';
 
   public function actionProjects($apiKey)
   {
@@ -20,12 +20,8 @@ class ApiController extends \app\components\mgcms\MgCmsController
     $arr = [];
     foreach ($products as $product) {
       $item = $product->attributes;
-      if ($product->logo)
-        $item['logo'] = Url::home(true) . $product->logo->imageSrc;
-      if ($product->picture)
-        $item['picture'] = Url::home(true) . $product->picture->imageSrc;
-      if ($product->whitepapera)
-        $item['whitepaper'] = Url::home(true) . $product->whitepapera->imageSrc;
+      if ($product->file)
+        $item['file'] = Url::home(true) . $product->file->imageSrc;
       $arr[] = $item;
     }
     return $arr;
