@@ -63,11 +63,13 @@ $menu = new NobleMenu(['name' => 'header_' . Yii::$app->language, 'loginLink' =>
                         </a>
                     </li>
                     <li class="List-custom__item">
-                    <? if (Yii::$app->user->isGuest): ?>
-                        <a href="<?= yii\helpers\Url::to(['/site/login']) ?>" class="Menu-top__login-btn btn btn-primary"> <?= Yii::t('db', 'Login'); ?> </a>
-                    <? else: ?>
-                        <a href="<?= yii\helpers\Url::to(['/site/account']) ?>" class="Menu-top__login-btn btn btn-primary"> <?= Yii::t('db', 'My account'); ?> </a>
-                    <? endif; ?>
+                        <? if (Yii::$app->user->isGuest): ?>
+                            <a href="<?= yii\helpers\Url::to(['/site/login']) ?>"
+                               class="Menu-top__login-btn btn btn-primary"> <?= Yii::t('db', 'Login'); ?> </a>
+                        <? else: ?>
+                            <a href="<?= yii\helpers\Url::to(['/site/account']) ?>"
+                               class="Menu-top__login-btn btn btn-primary"> <?= Yii::t('db', 'My account'); ?> </a>
+                        <? endif; ?>
                     </li>
                 </ul>
                 <div class="Select-custom">
@@ -185,9 +187,25 @@ $menu = new NobleMenu(['name' => 'header_' . Yii::$app->language, 'loginLink' =>
                 <ul class="Menu-top__list">
                     <? foreach ($menu->getItems() as $item): ?>
                         <li class="<? if (isset($item['active']) && $item['active']): ?>menu__item--current<? endif ?>">
-                            <? if (isset($item['url'])): ?>
-                                <a href="<?= \yii\helpers\Url::to($item['url']) ?>"
-                                   class="Menu-top__link <? if (!$isHomePage || !preg_match('/.*#.*/', $item['url'])): ?>external<? endif ?>"><?= $item['label'] ?></a>
+
+                            <? if (isset($item['items'])): ?>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                    <?= $item['label'] ?>
+                                </a>
+
+                                <div class="dropdown-menu">
+                                    <? foreach ($item['items'] as $subItem): ?>
+                                        <? if (isset($subItem['url'])): ?>
+                                            <a class="dropdown-item" href="<?= \yii\helpers\Url::to($subItem['url']) ?>"><?= $subItem['label'] ?></a>
+                                        <? endif ?>
+                                    <? endforeach ?>
+                                </div>
+
+                            <? else: ?>
+                                <? if (isset($item['url'])): ?>
+                                    <a href="<?= \yii\helpers\Url::to($item['url']) ?>"
+                                       class="Menu-top__link <? if (!$isHomePage || !preg_match('/.*#.*/', $item['url'])): ?>external<? endif ?>"><?= $item['label'] ?></a>
+                                <? endif ?>
                             <? endif ?>
                         </li>
                     <? endforeach ?>
@@ -235,15 +253,15 @@ $menu = new NobleMenu(['name' => 'header_' . Yii::$app->language, 'loginLink' =>
 
 
 <script type="text/javascript">
-    function submitLogoutForm() {
-        $('#logoutForm').submit();
-    }
+  function submitLogoutForm () {
+    $('#logoutForm').submit();
+  }
 
-    function openLoginPopup() {
-        $.magnificPopup.open({
-            items: {
-                src: "#Login-box"
-            }
-        });
-    }
+  function openLoginPopup () {
+    $.magnificPopup.open({
+      items: {
+        src: '#Login-box',
+      },
+    });
+  }
 </script>

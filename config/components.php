@@ -53,7 +53,7 @@ $arr = [
         ],
         'bundles' => [
             'yii\web\JqueryAsset' => [
-                'jsOptions' => ['position' => \yii\web\View::POS_END],
+                'jsOptions' => ['position' => \yii\web\View::POS_HEAD],
                 'js' => ['/js/jquery.min.js']
             ],
             'yii\bootstrap\BootstrapAsset' => [
