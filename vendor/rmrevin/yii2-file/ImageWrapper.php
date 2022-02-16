@@ -18,7 +18,7 @@ use yii\helpers\StringHelper;
  * Class ImageWrapper
  * @package rmrevin\yii\module\File
  */
-class ImageWrapper extends \yii\base\Object
+class ImageWrapper extends \yii\base\BaseObject
 {
 
     /** @var \rmrevin\yii\module\File\models\File */
