@@ -68,29 +68,29 @@ $this->title = Yii::t('db', 'About our platform');
         <div class="container fadeIn animated">
             <h4><?= MgHelpers::getSettingTranslated('About platform - header 2', 'About platform - header 2') ?></h4>
             <div class="List-grid">
-                <div class="List-grid__item">
-                    <h6 class="List-grid__item__header"><?= MgHelpers::getSettingTranslated('About platform - title 1', 'About platform - title 1') ?></h6>
+                <div class="List-custm__checklist__item">
+                    <h6 class="List-custm__checklist__item__header"><?= MgHelpers::getSettingTranslated('About platform - title 1', 'About platform - title 1') ?></h6>
                     <?= MgHelpers::getSettingTypeText('About platform - text 1 '.Yii::$app->language, true,'<p>About platform - text  1 lang</p>')?>
                 </div>
-                <div class="List-grid__item">
-                    <h6 class="List-grid__item__header"><?= MgHelpers::getSettingTranslated('About platform - title 2', 'About platform - title 2') ?></h6>
+                <div class="List-custm__checklist__item">
+                    <h6 class="List-custm__checklist__item__header"><?= MgHelpers::getSettingTranslated('About platform - title 2', 'About platform - title 2') ?></h6>
                     <?= MgHelpers::getSettingTypeText('About platform - text 2 '.Yii::$app->language, true,'<p>About platform - text  2 lang</p>')?>
                 </div>
-                <div class="List-grid__item">
-                    <h6 class="List-grid__item__header"><?= MgHelpers::getSettingTranslated('About platform - title 3', 'About platform - title 3') ?></h6>
+                <div class="List-custm__checklist__item">
+                    <h6 class="List-custm__checklist__item__header"><?= MgHelpers::getSettingTranslated('About platform - title 3', 'About platform - title 3') ?></h6>
                     <?= MgHelpers::getSettingTypeText('About platform - text 3 '.Yii::$app->language, true,'<p>About platform - text  3 lang</p>')?>
                 </div>
 
-                <div class="List-grid__item">
-                    <h6 class="List-grid__item__header"><?= MgHelpers::getSettingTranslated('About platform - title 4', 'About platform - title 4') ?></h6>
+                <div class="List-custm__checklist__item">
+                    <h6 class="List-custm__checklist__item__header"><?= MgHelpers::getSettingTranslated('About platform - title 4', 'About platform - title 4') ?></h6>
                     <?= MgHelpers::getSettingTypeText('About platform - text 4 '.Yii::$app->language, true,'<p>About platform - text  4 lang</p>')?>
                 </div>
-                <div class="List-grid__item">
-                    <h6 class="List-grid__item__header"><?= MgHelpers::getSettingTranslated('About platform - title 5', 'About platform - title 5') ?></h6>
+                <div class="List-custm__checklist__item">
+                    <h6 class="List-custm__checklist__item__header"><?= MgHelpers::getSettingTranslated('About platform - title 5', 'About platform - title 5') ?></h6>
                     <?= MgHelpers::getSettingTypeText('About platform - text 5 '.Yii::$app->language, true,'<p>About platform - text  5 lang</p>')?>
                 </div>
-                <div class="List-grid__item">
-                    <h6 class="List-grid__item__header"><?= MgHelpers::getSettingTranslated('About platform - title 6', 'About platform - title 6' ) ?></h6>
+                <div class="List-custm__checklist__item">
+                    <h6 class="List-custm__checklist__item__header"><?= MgHelpers::getSettingTranslated('About platform - title 6', 'About platform - title 6' ) ?></h6>
                     <?= MgHelpers::getSettingTypeText('About platform - text 6 '.Yii::$app->language, true,'<p>About platform - text  6 lang</p>')?>
                 </div>
             </div>
