@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .Top-pane {
-  background: #0e2666;
+  background: #193359;
   color: #fafafa;
 }
 .Top-pane .List-custom a {
@@ -61,7 +61,7 @@
 .Footer__menu__link {
   color: inherit;
   line-height: 28px;
-  color: #0e2666;
+  color: #193359;
   font-weight: 600;
   font-size: 15px;
 }
@@ -200,7 +200,7 @@
   height: 40px;
   border-radius: 3px;
   background: #fafafa !important;
-  color: #0e2666 !important;
+  color: #193359 !important;
   position: absolute;
   transform: translate(0, -50%);
   top: 50%;
@@ -222,7 +222,7 @@
     height: 40px;
     border-radius: 3px;
     background: #fafafa !important;
-    color: #0e2666 !important;
+    color: #193359 !important;
     position: absolute;
     transform: translate(0, -50%);
     top: 50%;
@@ -253,7 +253,7 @@
   transition: all 0.2s ease;
   max-width: 140px;
   height: auto;
-  fill: #0e2666;
+  fill: #193359;
 }
 .Menu-top--sticky {
   padding: 15px 0;
@@ -320,7 +320,7 @@
   }
 }
 .Menu-top__link {
-  color: #0e2666;
+  color: #193359;
   font-weight: 500;
 }
 .Menu-top__link:hover, .Menu-top__link--active {
@@ -343,7 +343,7 @@
   font-size: 1.4em;
   background: #e1e4eb;
   border-radius: 3px;
-  color: #0e2666;
+  color: #193359;
   width: var(--size);
   height: var(--size);
   line-height: var(--size);
@@ -358,7 +358,7 @@
 .Menu-top__search-btn {
   background: #e1e4eb;
   border-radius: 3px;
-  color: #0e2666;
+  color: #193359;
   font-size: 1.2em;
   text-align: center;
   width: var(--size);
@@ -392,7 +392,7 @@
   top: -10px;
 }
 .Form__label {
-  color: #0e2666;
+  color: #193359;
   font-size: 1.1rem;
   margin: 0;
   transition: all 0.3s ease;
@@ -417,7 +417,7 @@
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
-  color: #0e2666;
+  color: #193359;
   font-size: 1rem;
   position: absolute;
   top: 50%;
@@ -529,7 +529,7 @@ input[type=submit] {
   }
 }
 .Section--light-bg * {
-  color: #0e2666 !important;
+  color: #193359 !important;
 }
 .Section--light-bg > div {
   position: relative;
@@ -803,13 +803,13 @@ img {
   padding: 15px 20px;
 }
 .Projects__card__heading {
-  color: #0e2666;
+  color: #193359;
   font-size: 1.3em;
   font-weight: bold;
 }
 .Projects__card__location {
   font-size: 1.1em;
-  color: #0e2666;
+  color: #193359;
   margin: 0;
 }
 .Projects__card__image-wrapper {
@@ -842,7 +842,7 @@ img {
   width: 40px;
   height: 40px;
   border-radius: 3px;
-  background: #0e2666 !important;
+  background: #193359 !important;
   color: #fafafa !important;
   position: absolute;
   transform: translate(0, -50%);
@@ -864,7 +864,7 @@ img {
     width: 40px;
     height: 40px;
     border-radius: 3px;
-    background: #0e2666 !important;
+    background: #193359 !important;
     color: #fafafa !important;
     position: absolute;
     transform: translate(0, -50%);
@@ -928,7 +928,7 @@ img {
   }
 }
 .News .Card__date {
-  background: #0e2666;
+  background: #193359;
   color: #ffffff;
   font-weight: 500;
   display: inline-block;
@@ -962,7 +962,7 @@ img {
   height: 40px;
   border-radius: 3px;
   background: #fcfcfc !important;
-  color: #0e2666 !important;
+  color: #193359 !important;
   position: absolute;
   transform: translate(0, -50%);
   top: 50%;
@@ -1098,15 +1098,15 @@ img {
   width: 100%;
 }
 .User-Panel__form-group label > span {
-  color: #0e2666;
+  color: #193359;
 }
 .User-Panel__form-group label .form-control {
   margin-top: 5px;
   font-size: 13px;
 }
 .User-Panel__form-group label .form-control:focus, .User-Panel__form-group label .form-control:active {
-  color: #0e2666;
-  border-color: #0e2666;
+  color: #193359;
+  border-color: #193359;
 }
 .User-Panel__form-group .form-control {
   border-bottom: 2px solid #ccd1de;
@@ -1192,7 +1192,7 @@ img {
   color: #4f5d75;
 }
 .Contact__block b {
-  color: #0e2666;
+  color: #193359;
 }
 .Contact__block p {
   margin-bottom: 20px;
@@ -1288,7 +1288,7 @@ img {
   width: 40px;
   height: 40px;
   border-radius: 3px;
-  background: #0e2666 !important;
+  background: #193359 !important;
   color: #fafafa !important;
   position: absolute;
   transform: translate(0, -50%);
@@ -1487,7 +1487,7 @@ img {
   height: 40px;
   border-radius: 3px;
   background: #fcfcfc !important;
-  color: #0e2666 !important;
+  color: #193359 !important;
   position: absolute;
   transform: translate(0, -50%);
   top: 50%;
@@ -1509,7 +1509,7 @@ img {
     height: 40px;
     border-radius: 3px;
     background: #fcfcfc !important;
-    color: #0e2666 !important;
+    color: #193359 !important;
     position: absolute;
     transform: translate(0, -50%);
     top: 50%;
@@ -1549,7 +1549,7 @@ img {
   top: 20px;
   left: 5vw;
   z-index: 2;
-  color: #0e2666;
+  color: #193359;
   font-weight: 600;
 }
 .Map__info__icon {
@@ -1700,7 +1700,7 @@ img {
   color: #f1f4fa;
 }
 .Select-custom__options__option .fa {
-  color: #0e2666;
+  color: #193359;
   font-size: 1.3em;
   margin-right: 10px;
   vertical-align: text-bottom;
@@ -1769,7 +1769,7 @@ img {
 }
 
 .Scroll-up {
-  background: #0e2666;
+  background: #193359;
   color: #ffffff;
   width: 50px;
   height: 50px;
@@ -1816,24 +1816,24 @@ img {
   position: relative;
 }
 .Search-box__input {
-  color: #0e2666;
+  color: #193359;
   background: transparent;
   border: none;
   outline: none !important;
-  border-bottom: 1px solid #0e2666;
+  border-bottom: 1px solid #193359;
   column-gap: 15px;
 }
 .Search-box__input::-webkit-input-placeholder {
-  color: #0e2666;
+  color: #193359;
 }
 .Search-box__input:-moz-placeholder {
-  color: #0e2666;
+  color: #193359;
 }
 .Search-box__input::-moz-placeholder {
-  color: #0e2666;
+  color: #193359;
 }
 .Search-box__input:-ms-input-placeholder {
-  color: #0e2666;
+  color: #193359;
 }
 .Search-box__input + .Form__label {
   top: 15px;
@@ -1845,7 +1845,7 @@ img {
 }
 .Search-box__submit {
   font-size: 20px;
-  background: #0e2666;
+  background: #193359;
   color: #ffffff;
   border: none;
   width: 71px;
@@ -1853,7 +1853,7 @@ img {
   border-radius: 3px;
 }
 .Search-box__close {
-  color: #0e2666;
+  color: #193359;
   align-self: center;
   justify-self: center;
   font-size: 2.1em;
@@ -1878,7 +1878,7 @@ img {
   }
 }
 .Contact-form-mini__icon {
-  background: #0e2666;
+  background: #193359;
   color: #ffffff;
   align-items: center;
   justify-content: center;
@@ -1955,7 +1955,7 @@ img {
   padding: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #e6e9f0;
-  color: #0e2666;
+  color: #193359;
   display: block;
   position: relative;
 }
@@ -1991,7 +1991,7 @@ img {
   }
 }
 .Accordion__card__body {
-  color: #0e2666;
+  color: #193359;
   padding: 10px;
   background: #f1f4fa;
 }
@@ -2072,11 +2072,11 @@ img {
   text-transform: uppercase;
 }
 .Card__small-text--primary {
-  color: #0e2666;
+  color: #193359;
 }
 .Card__header {
   font-size: 20px;
-  color: #0e2666;
+  color: #193359;
   margin-bottom: 20px;
   font-weight: 600;
 }
@@ -2101,7 +2101,7 @@ img {
   margin-top: 20px !important;
 }
 .Card__mail {
-  color: #0e2666;
+  color: #193359;
   font-size: 0.9em;
   font-weight: 600;
 }
@@ -2129,7 +2129,7 @@ img {
 .Card__icon {
   margin-right: 10px;
   display: inline-block;
-  color: #0e2666;
+  color: #193359;
   font-size: 1.4em;
 }
 .Card__arrow {
@@ -2270,7 +2270,7 @@ img {
   grid-template-columns: auto auto;
 }
 .Invest-counter__source {
-  color: #0e2666;
+  color: #193359;
 }
 .Invest-counter__target {
   color: #ef8354;
@@ -2299,7 +2299,7 @@ img {
   font-weight: 600;
 }
 .Invest-counter__footer strong {
-  color: #0e2666;
+  color: #193359;
 }
 .Invest-counter__body {
   padding-top: 10px;
@@ -2310,7 +2310,7 @@ img {
   }
 }
 .Invest-counter__body__heading {
-  color: #0e2666;
+  color: #193359;
   font-weight: 600;
   margin-bottom: 10px;
   font-size: 14px;
@@ -2322,7 +2322,7 @@ img {
 }
 .Count-down-timer > div {
   font-size: 0.8em;
-  color: #0e2666;
+  color: #193359;
   text-align: center;
   font-weight: 500;
   border-right: 1px solid #f1f4fa;
@@ -2332,14 +2332,14 @@ img {
 }
 .Count-down-timer > div span {
   font-size: 2em;
-  color: #0e2666;
+  color: #193359;
   font-weight: BOLD;
   display: block;
   line-height: 1;
 }
 
 .Cookies {
-  background: #0e2666;
+  background: #193359;
   color: #ffffff;
   padding: 20px;
   z-index: 9;
@@ -2389,7 +2389,7 @@ img {
 .Breadcrumbs__link {
   display: inline-block;
   padding: 0 5px;
-  color: #0e2666;
+  color: #193359;
   line-height: 1.5;
   position: relative;
   padding-right: 40px;
@@ -2442,7 +2442,7 @@ img {
 .Pagination .page-item .page-link {
   border-radius: 0;
   color: #ffffff;
-  background: #0e2666;
+  background: #193359;
   font-weight: bold;
   border: none;
   width: 50px;
@@ -2494,7 +2494,7 @@ img {
   pointer-events: none;
   line-height: 50px;
   font-weight: 400;
-  color: #0e2666;
+  color: #193359;
   font-size: 1.1rem;
 }
 .Login-box .Form__input:focus + label, .Login-box .Form__input:not(:placeholder-shown) + label {
@@ -2502,7 +2502,7 @@ img {
   top: -16px;
 }
 .Login-box__close {
-  color: #0e2666 !important;
+  color: #193359 !important;
   font-size: 3em;
   width: 60px;
   height: auto;
@@ -2658,7 +2658,7 @@ img {
   content: "✓";
   width: var(--size);
   height: var(--size);
-  color: #0e2666;
+  color: #193359;
   position: absolute;
   font-size: 30px;
   left: 0%;
@@ -2700,7 +2700,7 @@ img {
   font-weight: 500;
 }
 .List-grid--numbers .List-grid__item__header {
-  color: #0e2666 !important;
+  color: #193359 !important;
 }
 .List-grid__item {
   padding-left: 65px;
@@ -2738,7 +2738,7 @@ img {
   font-size: 12px;
 }
 .List-grid__item:nth-child(odd):before {
-  background: #0e2666;
+  background: #193359;
 }
 .List-grid__item:nth-child(odd) .List-grid__item__header {
   color: #ef8354;
@@ -2799,7 +2799,7 @@ img {
 }
 
 .btn-primary {
-  background: #0e2666;
+  background: #193359;
   border-radius: 3px;
 }
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
@@ -2841,7 +2841,7 @@ img {
   padding: 25px;
 }
 .White-text-block__highline {
-  color: #0e2666;
+  color: #193359;
   font-weight: 500;
 }
 .White-text-block__header {
@@ -2854,11 +2854,11 @@ body {
 }
 
 a {
-  color: #0e2666;
+  color: #193359;
   text-decoration: none;
 }
 a:hover {
-  color: #0e2666;
+  color: #193359;
   text-decoration: none;
 }
 
@@ -2868,7 +2868,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #0e2666;
+  color: #193359;
   font-weight: bold;
 }
 
