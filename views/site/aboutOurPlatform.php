@@ -21,7 +21,7 @@ $this->title = Yii::t('db', 'About our platform');
                     <img
                             style="margin-left: -50px;"
                             class="Section__image"
-                            src="/images/image_1.png"
+                            src="<?= MgHelpers::getSetting('About platform image',false,'/images/image_1.png')?>"
                     />
                 </div>
                 <div
