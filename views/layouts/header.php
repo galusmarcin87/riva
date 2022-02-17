@@ -186,7 +186,7 @@ $menu = new NobleMenu(['name' => 'header_' . Yii::$app->language, 'loginLink' =>
                 </a>
                 <ul class="Menu-top__list">
                     <? foreach ($menu->getItems() as $item): ?>
-                        <li class="<? if (isset($item['active']) && $item['active']): ?>menu__item--current<? endif ?>">
+                        <li class="<? if (isset($item['active']) && $item['active']): ?>menu__item--current<? endif ?> <? if (isset($item['items'])): ?> dropdown<? endif ?>">
 
                             <? if (isset($item['items'])): ?>
                                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">

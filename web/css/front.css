@@ -1,3 +1,5 @@
-.Menu-top__inner{
-    grid-template-columns: 168px calc(100% - 224px) 70px;
+@media (min-width: 990px) {
+    .Menu-top__inner {
+        grid-template-columns: 168px calc(100% - 224px) 70px;
+    }
 }
