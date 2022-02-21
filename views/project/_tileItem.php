@@ -73,28 +73,52 @@ $model->language = Yii::$app->language;
                 ></div>
             </div>
         <? endif ?>
-        <div class="Invest-counter__body">
-            <div class="Invest-counter__body__heading">
-                <?= Yii::t('db', 'Time left'); ?>:
-            </div>
-            <div
-                    data-date="<?= $model->date_crowdsale_end ?>"
-                    class="Count-down-timer"
-            >
-                <div class="Count-down-timer__day">
-                    <span></span> <?= Yii::t('db', 'days'); ?>
+    </div>
+	    <div class="Invest-counter">
+        <? if ($model->money && $model->money_full): ?>
+            <div class="Invest-counter__header">
+                <div class="Invest-counter__source">
+
+                    $<span class="Invest-counter__source__value"><?= MgHelpers::convertNumberToNiceString((int)$model->money) ?></span>
+                    (<span data-to="<?= round(($model->money / $model->money_full) * 100, 0) ?>"
+                           class="Invest-counter__source__percent">0</span>%)
                 </div>
-                <div class="Count-down-timer__hour">
-                    <span></span> <?= Yii::t('db', 'hours'); ?>
-                </div>
-                <div class="Count-down-timer__minute">
-                    <span></span> <?= Yii::t('db', 'minutes'); ?>
-                </div>
-                <div class="Count-down-timer__second">
-                    <span></span> <?= Yii::t('db', 'seconds'); ?>
+                <div class="Invest-counter__target">
+                    $<?= MgHelpers::convertNumberToNiceString($model->money_full) ?>
                 </div>
             </div>
-        </div>
+            <div class="Invest-counter__value-line-wrapper">
+                <div
+                        data-to="<?= $model->money ?>"
+                        data-slide-to="<?= round(($model->money / $model->money_full) * 100, 0) ?>"
+                        class="Invest-counter__value-line"
+                        style="width: 0%"
+                ></div>
+            </div>
+        <? endif ?>
+    </div>
+	    <div class="Invest-counter">
+        <? if ($model->money && $model->money_full): ?>
+            <div class="Invest-counter__header">
+                <div class="Invest-counter__source">
+
+                    $<span class="Invest-counter__source__value"><?= MgHelpers::convertNumberToNiceString((int)$model->money) ?></span>
+                    (<span data-to="<?= round(($model->money / $model->money_full) * 100, 0) ?>"
+                           class="Invest-counter__source__percent">0</span>%)
+                </div>
+                <div class="Invest-counter__target">
+                    $<?= MgHelpers::convertNumberToNiceString($model->money_full) ?>
+                </div>
+            </div>
+            <div class="Invest-counter__value-line-wrapper">
+                <div
+                        data-to="<?= $model->money ?>"
+                        data-slide-to="<?= round(($model->money / $model->money_full) * 100, 0) ?>"
+                        class="Invest-counter__value-line"
+                        style="width: 0%"
+                ></div>
+            </div>
+        <? endif ?>
     </div>
     <a href="<?= $model->linkUrl ?>" class="btn btn-success btn-block">
         <?= Yii::t('db', 'DETAILS OF INVESTITION'); ?>
