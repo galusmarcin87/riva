@@ -10,20 +10,6 @@ use yii\widgets\ListView;
 $projectSearch = new \app\models\mgcms\db\ProjectSearch();
 $projectSearch->limit = 6;
 
-
-$tabsStatuses = [Project::STATUS_ACTIVE];
-$tabsConfig = [];
-foreach ($tabsStatuses as $status) {
-    $provider = $projectSearch->search([], $status);
-    $provider->pagination = false;
-
-    $tabsConfig[] = [
-        'name' => Project::STATUSES_EN[$status],
-        'provider' => $provider
-    ];
-}
-
-
 $header = isset($header) ? $header : 'Current projects';
 $showLink = isset($showLink) ? $showLink : true;
 
@@ -53,7 +39,7 @@ $showLink = isset($showLink) ? $showLink : true;
     <div class="Carousel">
         <?php
 
-        $provider = $projectSearch->search([], Project::STATUS_ACTIVE);
+        $provider = $projectSearch->search([], $status);
         $provider->pagination = false;
         echo ListView::widget([
             'dataProvider' => $provider,
