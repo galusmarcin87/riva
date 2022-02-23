@@ -204,7 +204,10 @@ $menu = new NobleMenu(['name' => 'header_' . Yii::$app->language, 'loginLink' =>
                             <? else: ?>
                                 <? if (isset($item['url'])): ?>
                                     <a href="<?= \yii\helpers\Url::to($item['url']) ?>"
-                                       class="Menu-top__link <? if (!$isHomePage || !preg_match('/.*#.*/', $item['url'])): ?>external<? endif ?>"><?= $item['label'] ?></a>
+                                       class="Menu-top__link
+                                       <? if (!$isHomePage || !preg_match('/.*#.*/', $item['url'])): ?>external<? endif ?>
+                                       <? if (isset($item['active']) && $item['active']): ?>Menu-top__link--active<? endif ?>
+                                        "><?= $item['label'] ?></a>
                                 <? endif ?>
                             <? endif ?>
                         </li>
