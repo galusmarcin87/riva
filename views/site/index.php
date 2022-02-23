@@ -6,8 +6,8 @@ use app\components\mgcms\MgHelpers;
 
 ?>
 
+<?= $this->render('index/video') ?>
 
-<?= $this->render('index/slider') ?>
 
 <?= $this->render('index/section1') ?>
 
