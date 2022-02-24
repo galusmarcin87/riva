@@ -8,6 +8,7 @@ use app\components\mgcms\MgHelpers;
 
 <?= $this->render('index/video') ?>
 
+<?= $this->render('index/counter') ?>
 
 <?= $this->render('index/section1') ?>
 
