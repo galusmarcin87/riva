@@ -154,7 +154,7 @@ $model->language = Yii::$app->language;
 </Section>
 
 
-<?= $this->render('/common/projects', ['header' => 'Other projects', 'showLink' => false]) ?>
+<?= $this->render('/common/projects', ['status' => \app\models\mgcms\db\Project::STATUS_ACTIVE, 'header' => 'Current projects', 'showLink' => false]) ?>
 <?= $this->render('/common/newsletterForm') ?>
 
 <?= $this->render('view/script', ['model' => $model]) ?>

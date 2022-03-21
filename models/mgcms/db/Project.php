@@ -35,8 +35,12 @@ use app\components\mgcms\MgHelpers;
  * @property integer $token_to_sale
  * @property integer $token_minimal_buy
  * @property integer $token_left
- *  @property string $buy_token_info
+ * @property string $buy_token_info
  * @property string $token_currency
+ * @property double $equality
+ * @property double $initial_value
+ * @property double $flrv
+ * @property double $ebrv
  *
  * @property \app\models\mgcms\db\Bonus[] $bonuses
  * @property \app\models\mgcms\db\Payment[] $payments
@@ -52,8 +56,9 @@ class Project extends \app\models\mgcms\db\AbstractRecord
     const STATUS_ACTIVE = 1;
     const STATUS_ENDED = 2;
     const STATUS_PLANNED = 3;
-    const STATUSES = [self::STATUS_ACTIVE => 'aktywny', self::STATUS_ENDED => 'zakończony', self::STATUS_PLANNED => 'zaplanowany'];
-    const STATUSES_EN = [self::STATUS_ACTIVE => 'Current', self::STATUS_ENDED => 'Ended', self::STATUS_PLANNED => 'Planned'];
+    const STATUS_ENDED_bprw = 4;
+    const STATUSES = [self::STATUS_ACTIVE => 'aktywny', self::STATUS_ENDED => 'zakończony', self::STATUS_PLANNED => 'zaplanowany', self::STATUS_ENDED_bprw => 'zakończony bprw',];
+    const STATUSES_EN = [self::STATUS_ACTIVE => 'Current', self::STATUS_ENDED => 'Ended', self::STATUS_PLANNED => 'Planned', self::STATUS_ENDED_bprw => 'ended3 bprw'];
 
     /**
      * @inheritdoc
@@ -62,15 +67,15 @@ class Project extends \app\models\mgcms\db\AbstractRecord
     {
         return [
             [['name', 'file_id'], 'required'],
-            [['gps_lat', 'gps_long', 'money', 'money_full'], 'number'],
+            [['gps_lat', 'gps_long', 'money', 'money_full', 'equality', 'initial_value', 'flrv', 'ebrv'], 'number'],
             [['lead', 'text', 'buy_token_info'], 'string'],
             [['file_id', 'percentage', 'percentage_presale_bonus', 'token_value', 'token_to_sale', 'token_minimal_buy', 'token_left', 'flag_id'], 'integer'],
             [['date_presale_start', 'date_presale_end', 'date_crowdsale_start', 'date_crowdsale_end', 'date_realization_profit'], 'safe'],
             [['name', 'localization', 'whitepaper', 'www', 'token_blockchain'], 'string', 'max' => 245],
-            [['status', 'investition_time','token_currency'], 'string', 'max' => 45]
+            [['status', 'investition_time', 'token_currency'], 'string', 'max' => 45]
         ];
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -115,9 +120,11 @@ class Project extends \app\models\mgcms\db\AbstractRecord
             'uploadedFiles' => "Obrazki",
             'buy_token_info' => Yii::t('app', 'Buy Token Info'),
             'token_currency' => Yii::t('app', 'Token currency'),
+            'equality' => Yii::t('app', 'Equality'),
+            'initial_value' => Yii::t('app', 'Initial value'),
         ];
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -125,7 +132,7 @@ class Project extends \app\models\mgcms\db\AbstractRecord
     {
         return $this->hasMany(\app\models\mgcms\db\Bonus::className(), ['project_id' => 'id']);
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -133,7 +140,7 @@ class Project extends \app\models\mgcms\db\AbstractRecord
     {
         return $this->hasMany(\app\models\mgcms\db\Payment::className(), ['project_id' => 'id']);
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -149,7 +156,7 @@ class Project extends \app\models\mgcms\db\AbstractRecord
     {
         return $this->hasOne(\app\models\mgcms\db\File::className(), ['id' => 'flag_id']);
     }
-    
+
     /**
      * @inheritdoc
      * @return \app\models\mgcms\db\ProjectQuery the active query used by this AR class.
@@ -158,8 +165,9 @@ class Project extends \app\models\mgcms\db\AbstractRecord
     {
         return new \app\models\mgcms\db\ProjectQuery(get_called_class());
     }
-     public function getLinkUrl()
-  {
-    return \yii\helpers\Url::to(['/project/view', 'name' => $this->name]);
-  }
+
+    public function getLinkUrl()
+    {
+        return \yii\helpers\Url::to(['/project/view', 'name' => $this->name]);
+    }
 }
