@@ -11,6 +11,7 @@ if (!$article) {
 $imageSrc = $article->file ? $article->file->getImageSrc(767, 559) : false;
 ?>
 
+
 <section class="Section">
     <div class="container">
         <div class="row animatedParent">
