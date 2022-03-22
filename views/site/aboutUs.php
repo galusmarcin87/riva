@@ -7,7 +7,7 @@ use app\components\mgcms\MgHelpers;
 /* @var $this yii\web\View */
 
 $this->title = Yii::t('db', 'Would you like to invest');
-
+ 
 ?>
 
 <?= $this->render('/common/breadcrumps') ?>
