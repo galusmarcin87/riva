@@ -11,9 +11,11 @@ $projects = Project::find()->all();
     <div class="animatedParent">
         <div class="Map__info">
             <div class="Map__info__icon Map__info__icon--active"></div>
-            <div class="Map__info__description">W trakcie / Planowane</div>
+            <div class="Map__info__description"><?= Yii::t('db', 'In progress / Planned') ?></div>
             <div class="Map__info__icon Map__info__icon--inactive"></div>
-            <div class="Map__info__description">Zakończone</div>
+            <div class="Map__info__description"><?= Yii::t('db', 'Ended') ?></div>
+            <div class="Map__info__icon Map__info__icon--ended"></div>
+            <div class="Map__info__description"><?= Yii::t('db', 'Ended bprw') ?></div>
         </div>
         <div id="map" class="Contact__map fadeIn animated"></div>
     </div>
@@ -23,7 +25,7 @@ $projects = Project::find()->all();
     const locations = [];
     <?foreach ($projects as $project):?>
     locations.push({
-        inProgress: <?= $project->status == Project::STATUS_ACTIVE ? 'true' : 'false'?>,
+        status: '<?= $project->status?>',
         name: "<?=trim($project->name)?>",
         locatioin: "<?=$project->localization?>",
         investition: "<?=$project->investition_time?>",

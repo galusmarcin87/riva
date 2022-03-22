@@ -199,15 +199,13 @@ const initMap = () => {
                                 locatioin,
                                 offering,
                                 investition,
-                                inProgress,
+                                status,
                                 link
                               }) => {
     const html = /*html*/ `
     <div class="Map__info-window">
       <div class="Map__info">
-        <div class="Map__info__icon Map__info__icon--${
-        inProgress ? "active" : "inactive"
-    }"></div>
+        <div class="Map__info__icon Map__info__icon--${        status    }"></div>
         <div class="Map__info__description">${name}</div>
       </div>
       <ul class="List-custom__two">
@@ -242,9 +240,7 @@ const initMap = () => {
   });
   bounds  = new google.maps.LatLngBounds();
   var markers = locations.map((location, i) => {
-    var marker = `/images/marker-${
-        location.inProgress ? "active" : "inactive"
-    }.png`;
+    var marker = `/images/marker-${       location.status    }.png`;
     let markerObj = new google.maps.Marker({
       position: {
         lat: parseFloat(location.latitude),
