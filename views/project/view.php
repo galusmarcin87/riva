@@ -21,6 +21,9 @@ $model->language = Yii::$app->language;
         -ms-grid-columns: var(--grid);
         grid-template-columns: var(--grid)
     }
+    .Project__info{
+        grid-template-columns: var(--grid);
+    }
 </style>
 
 <?= $this->render('/common/breadcrumps') ?>
