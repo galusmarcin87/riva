@@ -122,12 +122,19 @@
 .mainCounter{
   width: 100%;
   display: flex;
-  .Invest-counter-left{
-    background: red;
+  .Invest-counter{
+    &.left{
+      .Invest-counter__value-line{
+        background: #f77f23 ;
+      }
+    }
+    &.right{
+      .Invest-counter__value-line{
+        background: #cd2121 ;
+      }
+    }
   }
-  .Invest-counter-right{
-    background: blue;
-  }
+
   .Invest-counter__value-line, .Invest-counter__value-line-wrapper{
     border-radius: 0;
     height: 25px;

@@ -21,7 +21,7 @@ foreach($projects as $project){
 
 <section class="Section">
     <div class="container mainCounter">
-        <div class="Invest-counter" style="width:<?= (int)($leftValue * 100 / $fullValue) ?>%;">
+        <div class="Invest-counter left" style="width:<?= (int)($leftValue * 100 / $fullValue) ?>%;">
             <div class="Invest-counter__header">
                 <div class="Invest-counter__source">
 
@@ -47,7 +47,7 @@ foreach($projects as $project){
             </div>
         </div>
 
-        <div class="Invest-counter" style="width:<?= (int)($middleValue * 100 / $fullValue) ?>%;">
+        <div class="Invest-counter middle" style="width:<?= (int)($middleValue * 100 / $fullValue) ?>%;">
             <div class="Invest-counter__header">
                 <div class="Invest-counter__target">
                     <?= MgHelpers::convertNumberToNiceString($middleGathered) ?> <?= Yii::t('db', 'tokens') ?>
@@ -71,7 +71,7 @@ foreach($projects as $project){
             </div>
         </div>
 
-        <div class="Invest-counter" style="width:<?= (int)($rightValue * 100 / $fullValue) ?>%;">
+        <div class="Invest-counter right" style="width:<?= (int)($rightValue * 100 / $fullValue) ?>%;">
             <div class="Invest-counter__header">
                 <div class="Invest-counter__source">
 
