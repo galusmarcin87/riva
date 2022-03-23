@@ -3,14 +3,14 @@ use app\components\mgcms\MgHelpers;
 ?>
 
 <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeGtxbtJfB88Fgff3N_um_SjNBNAROskU&callback=initMap"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeGtxbtJfB88Fgff3N_um_SjNBNAROskU&callback=initMapContact"
         async
         defer
 ></script>
 
 <script>
     var map;
-    function initMap() {
+    function initMapContact() {
         var myLatLng = {lat: <?=MgHelpers::getSetting('contact_map_lat',false, '52.249502')?>, lng: <?=MgHelpers::getSetting('contact_map_long',false, '21.0435739')?>};
         // Create a map object and specify the DOM element for display.
         map = new google.maps.Map(document.getElementById("map"), {
