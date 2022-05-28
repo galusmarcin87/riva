@@ -70,32 +70,14 @@ $model->language = Yii::$app->language;
                                 </div>
                             </div>
                         </div>
-                        <div class="Invest-counter__header">
-                            <div class="Invest-counter__source">
-                                $<span class="Invest-counter__source__value"><?= MgHelpers::convertNumberToNiceString($model->money) ?></span>
-                                <? if ($model->money_full): ?>
-                                    (<span data-to="<?= round(($model->money / $model->money_full) * 100, 3) ?>"
-                                           class="Invest-counter__source__percent">0</span>%)
-                                <? endif; ?>
-                            </div>
-                            <div class="Invest-counter__target">
-                                $<?= MgHelpers::convertNumberToNiceString($model->money_full) ?>
-                            </div>
-                        </div>
-                        <div class="Invest-counter__value-line-wrapper">
-                            <div
-                                    data-to="<?= $model->money ?>"
-                                <? if ($model->money_full): ?>
-                                    data-slide-to="<?= round(($model->money / $model->money_full) * 100, 3) ?>"
-                                <? endif; ?>
-                                    class="Invest-counter__value-line" style="width: 0%"></div>
-                        </div>
+
                     </div>
                     <a class="btn btn-success btn-block btn--lowercase btn--line-top"
                        href="<?= Url::to(['project/buy', 'id' => $model->id]) ?>"><?= Yii::t('db', 'Invest'); ?></a>
                 </div>
             </div>
         </div>
+        <?= $this->render('view/counter',['model' => $model])?>
         <div class="Project__content">
             <div class="Project__map" id="map"></div>
             <? if (sizeof($model->bonuses) > 0): ?>

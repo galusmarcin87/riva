@@ -7,6 +7,7 @@ use yii\web\View;
 /* @var $model Project */
 /* @var $this yii\web\View */
 $model->language = Yii::$app->language;
+
 ?>
 
 
@@ -52,74 +53,53 @@ $model->language = Yii::$app->language;
         <?= $model->lead ?>
     </p>
     <div class="Invest-counter">
-        <? if ($model->money && $model->money_full): ?>
+        <? if ($model->elrv && $model->ebrv): ?>
             <div class="Invest-counter__header">
                 <div class="Invest-counter__source">
 
-                    $<span class="Invest-counter__source__value"><?= MgHelpers::convertNumberToNiceString((int)$model->money) ?></span>
-                    (<span data-to="<?= round(($model->money / $model->money_full) * 100, 0) ?>"
+                    ELRV: <span class="Invest-counter__source__value"> <?= MgHelpers::convertNumberToNiceString((int)$model->elrv) ?></span>
+                    (<span data-to="<?= round(($model->elrv / ($model->elrv + $model->ebrv)) * 100, 0) ?>"
                            class="Invest-counter__source__percent">0</span>%)
                 </div>
                 <div class="Invest-counter__target">
-                    $<?= MgHelpers::convertNumberToNiceString($model->money_full) ?>
+                    EBRV: <?= MgHelpers::convertNumberToNiceString(($model->ebrv)) ?>
                 </div>
             </div>
             <div class="Invest-counter__value-line-wrapper">
                 <div
-                        data-to="<?= $model->money ?>"
-                        data-slide-to="<?= round(($model->money / $model->money_full) * 100, 0) ?>"
+                        data-to="<?= $model->elrv ?>"
+                        data-slide-to="<?= round(($model->elrv / ($model->elrv + $model->ebrv)) * 100, 0) ?>"
                         class="Invest-counter__value-line"
                         style="width: 0%"
                 ></div>
             </div>
         <? endif ?>
     </div>
-	    <div class="Invest-counter">
-        <? if ($model->money && $model->money_full): ?>
+
+    <div class="Invest-counter">
+        <? if ($model->equality && $model->ebrv): ?>
             <div class="Invest-counter__header">
                 <div class="Invest-counter__source">
 
-                    $<span class="Invest-counter__source__value"><?= MgHelpers::convertNumberToNiceString((int)$model->money) ?></span>
-                    (<span data-to="<?= round(($model->money / $model->money_full) * 100, 0) ?>"
+                    <?= Yii::t('db', 'EQUITY') ?>: <span class="Invest-counter__source__value"> <?= MgHelpers::convertNumberToNiceString((int)$model->equality) ?></span>
+                    (<span data-to="<?= round(($model->equality / ($model->equality + $model->ebrv)) * 100, 0) ?>"
                            class="Invest-counter__source__percent">0</span>%)
                 </div>
                 <div class="Invest-counter__target">
-                    $<?= MgHelpers::convertNumberToNiceString($model->money_full) ?>
+                    EBRV: <?= MgHelpers::convertNumberToNiceString(($model->ebrv)) ?>
                 </div>
             </div>
             <div class="Invest-counter__value-line-wrapper">
                 <div
-                        data-to="<?= $model->money ?>"
-                        data-slide-to="<?= round(($model->money / $model->money_full) * 100, 0) ?>"
+                        data-to="<?= $model->equality ?>"
+                        data-slide-to="<?= round(($model->equality / ($model->equality + $model->ebrv)) * 100, 0) ?>"
                         class="Invest-counter__value-line"
                         style="width: 0%"
                 ></div>
             </div>
         <? endif ?>
     </div>
-	    <div class="Invest-counter">
-        <? if ($model->money && $model->money_full): ?>
-            <div class="Invest-counter__header">
-                <div class="Invest-counter__source">
 
-                    $<span class="Invest-counter__source__value"><?= MgHelpers::convertNumberToNiceString((int)$model->money) ?></span>
-                    (<span data-to="<?= round(($model->money / $model->money_full) * 100, 0) ?>"
-                           class="Invest-counter__source__percent">0</span>%)
-                </div>
-                <div class="Invest-counter__target">
-                    $<?= MgHelpers::convertNumberToNiceString($model->money_full) ?>
-                </div>
-            </div>
-            <div class="Invest-counter__value-line-wrapper">
-                <div
-                        data-to="<?= $model->money ?>"
-                        data-slide-to="<?= round(($model->money / $model->money_full) * 100, 0) ?>"
-                        class="Invest-counter__value-line"
-                        style="width: 0%"
-                ></div>
-            </div>
-        <? endif ?>
-    </div>
     <a href="<?= $model->linkUrl ?>" class="btn btn-success btn-block">
         <?= Yii::t('db', 'DETAILS OF INVESTITION'); ?>
     </a>

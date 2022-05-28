@@ -155,13 +155,15 @@ use app\components\mgcms\MgHelpers;
 
         <?= $form->field12md($model, 'buy_token_info')->tinyMce(['rows' => 6]) ?>
 
-        <?= $form->field3md($model, 'equality')->textInput(['placeholder' => '']) ?>
+        <?= $form->field4md($model, 'equality')->textInput(['placeholder' => '']) ?>
 
-        <?= $form->field3md($model, 'initial_value')->textInput(['placeholder' => '']) ?>
+        <?= $form->field4md($model, 'initial_value')->textInput(['placeholder' => '']) ?>
 
-        <?= $form->field3md($model, 'flrv')->textInput(['placeholder' => '']) ?>
+        <?= $form->field4md($model, 'flrv')->textInput(['placeholder' => '']) ?>
 
-        <?= $form->field3md($model, 'ebrv')->textInput(['placeholder' => '']) ?>
+        <?= $form->field4md($model, 'ebrv')->textInput(['placeholder' => '']) ?>
+
+        <?= $form->field4md($model, 'elrv')->textInput(['placeholder' => '']) ?>
 
 
 

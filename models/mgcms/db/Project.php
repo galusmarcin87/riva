@@ -41,6 +41,7 @@ use app\components\mgcms\MgHelpers;
  * @property double $initial_value
  * @property double $flrv
  * @property double $ebrv
+ * @property double $elrv
  *
  * @property \app\models\mgcms\db\Bonus[] $bonuses
  * @property \app\models\mgcms\db\Payment[] $payments
@@ -67,7 +68,7 @@ class Project extends \app\models\mgcms\db\AbstractRecord
     {
         return [
             [['name', 'file_id'], 'required'],
-            [['gps_lat', 'gps_long', 'money', 'money_full', 'equality', 'initial_value', 'flrv', 'ebrv'], 'number'],
+            [['gps_lat', 'gps_long', 'money', 'money_full', 'equality', 'initial_value', 'flrv', 'ebrv', 'elrv'], 'number'],
             [['lead', 'text', 'buy_token_info'], 'string'],
             [['file_id', 'percentage', 'percentage_presale_bonus', 'token_value', 'token_to_sale', 'token_minimal_buy', 'token_left', 'flag_id'], 'integer'],
             [['date_presale_start', 'date_presale_end', 'date_crowdsale_start', 'date_crowdsale_end', 'date_realization_profit'], 'safe'],
@@ -122,6 +123,7 @@ class Project extends \app\models\mgcms\db\AbstractRecord
             'token_currency' => Yii::t('app', 'Token currency'),
             'equality' => Yii::t('app', 'Equality'),
             'initial_value' => Yii::t('app', 'Initial value'),
+            'equality' => Yii::t('app', 'Equity'),
         ];
     }
 
