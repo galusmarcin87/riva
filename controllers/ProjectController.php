@@ -15,11 +15,11 @@ use __;
 class ProjectController extends \app\components\mgcms\MgCmsController
 {
 
-    public function actionIndex()
+    public function actionIndex($status = Project::STATUS_ACTIVE)
     {
 
         $dataProvider = new ActiveDataProvider([
-            'query' => Project::find()->where(['status' => Project::STATUS_ACTIVE]),
+            'query' => Project::find()->where(['status' => $status]),
         ]);
 
         return $this->render('index', [
@@ -121,7 +121,7 @@ class ProjectController extends \app\components\mgcms\MgCmsController
         }
 
         $output['income'] = $capital + ($capital * (intval(($_POST['percentage'])) / 100 * $_POST['investition_time']));
-       
+
         return json_encode($output);
     }
 }
