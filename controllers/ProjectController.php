@@ -24,6 +24,7 @@ class ProjectController extends \app\components\mgcms\MgCmsController
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
+            'status' => $status
         ]);
     }
 

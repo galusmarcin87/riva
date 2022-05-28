@@ -8,7 +8,13 @@ use kartik\export\ExportMenu;
 use yii\widgets\ListView;
 use app\models\mgcms\db\Project;
 
-$this->title = Yii::t('db', 'Current projects');
+if($status == Project::STATUS_ACTIVE){
+    $this->title = Yii::t('db', 'Current projects');
+}
+if($status == Project::STATUS_ENDED){
+    $this->title = Yii::t('db', 'Ended projects');
+}
+
 $this->params['breadcrumbs'][] = $this->title;
 
 
