@@ -131,11 +131,29 @@
   display: flex;
   .Invest-counter{
     &.left{
+       .Invest-counter__value-line-wrapper::after{
+         content: '';
+         position: absolute;
+         right: 0;
+         top: -10px;
+         bottom: -10px;
+         width: 1px;
+         background-color: #273c76;
+       }
       .Invest-counter__value-line{
         background: #273c76 ;
       }
     }
     &.middle{
+      .Invest-counter__value-line-wrapper::after{
+        content: '';
+        position: absolute;
+        right: 0;
+        top: -10px;
+        bottom: -10px;
+        width: 1px;
+        background-color: #273c76;
+      }
       .Invest-counter__value-line-wrapper{
         background: #efffef;
       }
@@ -158,6 +176,12 @@
   .Invest-counter__value-line, .Invest-counter__value-line-wrapper{
     border-radius: 0;
     height: 25px;
+  }
+  .Invest-counter__target{
+    padding-right: 5px;
+  }
+  .Invest-counter__source{
+    padding-left: 5px;
   }
 }
 

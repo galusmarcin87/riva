@@ -21,7 +21,7 @@ foreach($projects as $project){
 
 <section class="Section">
     <div class="container mainCounter">
-        <div class="Invest-counter left" style="width:<?= (int)($leftValue * 100 / $fullValue) ?>%;">
+        <div class="Invest-counter left" style="width:<?= (int)($leftValue * 100 / $fullValue) ?>%;" title="<?= Yii::t('db', 'Client\'s tokens' ) ?>">
             <div class="Invest-counter__header">
                 <div class="Invest-counter__source">
 
@@ -49,21 +49,25 @@ foreach($projects as $project){
 
         <div class="Invest-counter middle" style="width:<?= (int)($middleValue * 100 / $fullValue) ?>%;">
             <div class="Invest-counter__header">
+                <div class="Invest-counter__source">
+
+                </div>
                 <div class="Invest-counter__target">
-                    <?= MgHelpers::convertNumberToNiceString($middleGathered) ?> <?= Yii::t('db', 'tokens') ?>
+                    &nbsp;
                 </div>
             </div>
-            <div class="Invest-counter__value-line-wrapper">
+            <div class="Invest-counter__value-line-wrapper" title="<?= Yii::t('db', 'Tokens to sell') ?>">
                 <div
                         data-to="<?= $middleValue ?>"
                         data-slide-to="<?= round(($middleGathered/ $middleValue) * 100, 0) ?>"
                         class="Invest-counter__value-line"
                         style="width: 0%"
+                        title="<?= Yii::t('db', 'Tokens gathered') ?>"
                 ></div>
             </div>
             <div class="Invest-counter__header">
                 <div class="Invest-counter__source">
-
+                    <?= MgHelpers::convertNumberToNiceString($middleGathered) ?> <?= Yii::t('db', 'tokens') ?>
                 </div>
                 <div class="Invest-counter__target">
                     <?= MgHelpers::convertNumberToNiceString($middleValue) ?> <?= Yii::t('db', 'tokens') ?>
@@ -71,7 +75,7 @@ foreach($projects as $project){
             </div>
         </div>
 
-        <div class="Invest-counter right" style="width:<?= (int)($rightValue * 100 / $fullValue) ?>%;">
+        <div class="Invest-counter right" style="width:<?= (int)($rightValue * 100 / $fullValue) ?>%;" title="<?= Yii::t('db', 'Undistributed tokens') ?>">
             <div class="Invest-counter__header">
                 <div class="Invest-counter__source">
 
